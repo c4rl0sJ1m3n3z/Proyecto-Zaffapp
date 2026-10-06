@@ -14,3 +14,7 @@ BEGIN
     RETURN IFNULL(v_dias, 0);
 END; //
 DELIMITER ;
+
+-- modo de uso 
+-- SELECT id_reporte, descripcion, fn_dias_desde_creacion(id_reporte) AS dias_transcurridos
+-- FROM reporte;
