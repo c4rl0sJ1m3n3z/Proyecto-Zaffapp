@@ -9,3 +9,5 @@ SET NEW.ciud_nombre = TRIM(NEW.ciud_nombre);
 SET NEW.ciud_telefono = TRIM(NEW.ciud_telefono);
 END; //
 DELIMITER ;
+
+-- comentarios
