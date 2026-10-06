@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaffapp - Estadísticas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <img src="logo.png" alt="Logo Zaffapp">
+                </div>
+                <span class="logo-text">Zaffapp</span>
+                <button class="menu-btn">☰</button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#"><i>📄</i> Historial</a></li>
+                    <li class="active"><a href="#"><i>📊</i> Estadísticas</a></li>
+                    <li><a href="#"><i>🚩</i> Reportes</a></li>
+                    <li><a href="#"><i>🗺️</i> Mapa</a></li>
+                </ul>
+                
+                <hr class="divider">
+                
+                <ul>
+                    <li><a href="#"><i>🔔</i> Notificaciones</a></li>
+                    <li><a href="#"><i>⚙️</i> Configuración</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-user">
+                <div class="user-avatar-large"></div>
+                <div class="user-info">
+                    <span class="username">Nombre_de_usuario</span>
+                    <a href="#" class="view-profile">Ver perfil ></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="icon-btn">‹</button>
+                    <button class="icon-btn">☰</button>
+                </div>
+                <div class="topbar-right">
+                    <button class="icon-btn">🔔</button>
+                    <button class="icon-btn">⚙️</button>
+                    <div class="user-profile">
+                        <div class="user-avatar-small"></div>
+                        <span>Nombre de usuario</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="page-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Estadísticas</h1>
+                        <p>Visualiza datos y tendencias de los reportes en la plataforma.</p>
+                    </div>
+                </div>
+
+                <!-- Stats Cards Row -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-title">Total de reportes</span>
+                            <span class="stat-icon-link">↗</span>
+                        </div>
+                        <span class="stat-value">128</span>
+                        <span class="stat-trend positive">15% vs mes anterior</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title">En revisión</span>
+                        <span class="stat-value">45</span>
+                        <span class="stat-trend positive">35.2% de total</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title">En proceso</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-title">Resueltos</span>
+                    </div>
+                </div>
+
+                <!-- Dashboard Charts Grid (2 Columnas) -->
+                <div class="charts-grid">
+                    
+                    <!-- Columna Izquierda (Principal) -->
+                    <div class="charts-column main-column">
+                        <!-- Reportes por categoría -->
+                        <div class="chart-card">
+                            <h3>Reportes por categoría</h3>
+                            <div class="donut-chart-container">
+                                <div class="donut-chart"></div>
+                                <ul class="chart-legend">
+                                    <li><span class="dot purple"></span> Vías</li>
+                                    <li><span class="dot dark-purple"></span> Basuras</li>
+                                    <li><span class="dot cyan"></span> Alumbrado</li>
+                                    <li><span class="dot orange"></span> Infraestructura</li>
+                                    <li><span class="dot light-purple"></span> Otros</li>
+                                </ul>
+                            </div>
+                            <span class="total-label">Total:</span>
+                        </div>
+
+                        <!-- Reportes por zona -->
+                        <div class="chart-card">
+                            <h3>Reportes por zona</h3>
+                            <div class="bars-list">
+                                <div class="bar-row">
+                                    <span class="zone-name">Centro</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 80%; background: #5c3cba;"></div></div>
+                                    <span class="bar-value">22 (25%)</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="zone-name">Norte</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 70%; background: #5c3cba;"></div></div>
+                                    <span class="bar-value">28 (22%)</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="zone-name">Sur</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 60%; background: #00bcd4;"></div></div>
+                                    <span class="bar-value">25 (20%)</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="zone-name">Oriente</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 45%; background: #00bcd4;"></div></div>
+                                    <span class="bar-value">21 (16%)</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="zone-name">Occidente</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 50%; background: #7e57c2;"></div></div>
+                                    <span class="bar-value">22 (17%)</span>
+                                </div>
+                            </div>
+                            <span class="total-label">Total:</span>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha (Secundaria) -->
+                    <div class="charts-column side-column">
+                        <!-- Tendencia de reportes -->
+                        <div class="chart-card">
+                            <h3>Tendencia de reportes</h3>
+                            <div class="line-chart-placeholder">
+                                <svg viewBox="0 0 200 80" class="line-svg">
+                                    <polyline points="10,60 50,50 90,30 130,40 170,10" fill="none" stroke="#5c3cba" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Comparativa mensual -->
+                        <div class="chart-card">
+                            <h3>Comparativa mensual</h3>
+                            <div class="bar-chart-placeholder">
+                                <div class="comparative-bars">
+                                    <div class="comp-bar primary" style="height: 70%;"></div>
+                                    <div class="comp-bar secondary" style="height: 50%;"></div>
+                                </div>
+                                <div class="comparative-legend">
+                                    <span><span class="dot purple"></span> Este mes</span>
+                                    <span><span class="dot light-purple"></span> Mes anterior</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer note -->
+                <div class="info-footer">
+                    <i>ⓘ</i> Los datos se actualizan en tiempo real.
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
