@@ -1,165 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ZAFFAPP - Registro</title>
-
+    <title>Zaffapp - Registro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="registro.css">
 </head>
-
 <body>
 
-    <div class="registro-container">
-
-        <div class="registro-card">
-
-            <!-- BOTÓN VOLVER -->
-            <button class="btn-volver" onclick="volverLogin()">
-                ‹
-            </button>
-
-
-            <!-- ICONO DE USUARIO -->
-            <div class="icono-usuario">
-
-                <div class="cabeza"></div>
-
-                <div class="cuerpo"></div>
-
+    <main class="auth-container">
+        <div class="auth-card">
+            
+            <!-- Botón de regresar -->
+            <div class="card-top-bar">
+                <a href="login.html" class="back-btn" title="Volver al inicio de sesión">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
             </div>
 
-
-            <!-- TITULO -->
-
-            <h1>Registro</h1>
-
-            <p class="subtitulo">
-                Crea tu cuenta
-            </p>
-
-
-            <!-- NOMBRE DE USUARIO -->
-
-            <div class="campo">
-
-                <span class="icono">
-                    ♙
-                </span>
-
-                <input
-                    type="text"
-                    placeholder="Nombre de usuario"
-                >
-
+            <!-- Avatar superior -->
+            <div class="auth-avatar">
+                <i class="fas fa-user"></i>
             </div>
 
-
-            <!-- CORREO -->
-
-            <div class="campo">
-
-                <span class="icono">
-                    ✉
-                </span>
-
-                <input
-                    type="email"
-                    placeholder="Correo electrónico"
-                >
-
+            <!-- Encabezado -->
+            <div class="auth-header">
+                <h2>Registro</h2>
+                <p>Crea tu cuenta</p>
             </div>
 
+            <!-- Formulario de Registro -->
+            <form class="auth-form">
+                
+                <div class="input-field">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" placeholder="Nombre de usuario" required>
+                </div>
 
-            <!-- IDENTIFICACIÓN -->
+                <div class="input-field">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" placeholder="Correo electrónico" required>
+                </div>
 
-            <div class="campo">
+                <div class="input-field">
+                    <i class="fas fa-id-card input-icon"></i>
+                    <input type="text" placeholder="N. Identificación" required>
+                </div>
 
-                <span class="icono">
-                    ▣
-                </span>
+                <div class="input-field">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" placeholder="N. Teléfono" required>
+                </div>
 
-                <input
-                    type="text"
-                    placeholder="N. Identificación"
-                >
+                <div class="input-field">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" placeholder="Contraseña" required>
+                    <i class="fas fa-eye-slash toggle-password"></i>
+                </div>
 
+                <!-- Botón de Registro -->
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+
+            <!-- Pie con enlace a Login -->
+            <div class="auth-footer">
+                <span>¿Ya tienes cuenta?</span>
+                <a href="login.html" class="auth-link">Iniciar sesión</a>
             </div>
-
-
-            <!-- TELEFONO -->
-
-            <div class="campo">
-
-                <span class="icono">
-                    ☎
-                </span>
-
-                <input
-                    type="tel"
-                    placeholder="N. Teléfono"
-                >
-
-            </div>
-
-
-            <!-- CONTRASEÑA -->
-
-            <div class="campo">
-
-                <span class="icono">
-                    🔒
-                </span>
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Contraseña"
-                >
-
-                <button
-                    class="mostrar"
-                    onclick="mostrarPassword()">
-
-                    ◉
-
-                </button>
-
-            </div>
-
-
-            <!-- BOTÓN REGISTRARSE -->
-
-            <button
-                class="btn-registrarse"
-                onclick="registrarse()">
-
-                Registrarse
-
-            </button>
-
-
-            <!-- INICIAR SESIÓN -->
-
-            <p class="iniciar">
-
-                ¿Ya tienes cuenta?
-
-                <button onclick="volverLogin()">
-                    Iniciar sesión
-                </button>
-
-            </p>
 
         </div>
-
-    </div>
-
-
-    <script src="registro.js"></script>
+    </main>
 
 </body>
-
 </html>
