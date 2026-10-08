@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZAFFAPP - Registro</title>
+
+    <link rel="stylesheet" href="registro.css">
+</head>
+
+<body>
+
+    <div class="registro-container">
+
+        <div class="registro-card">
+
+            <!-- BOTÓN VOLVER -->
+            <button class="btn-volver" onclick="volverLogin()">
+                ‹
+            </button>
+
+
+            <!-- ICONO DE USUARIO -->
+            <div class="icono-usuario">
+
+                <div class="cabeza"></div>
+
+                <div class="cuerpo"></div>
+
+            </div>
+
+
+            <!-- TITULO -->
+
+            <h1>Registro</h1>
+
+            <p class="subtitulo">
+                Crea tu cuenta
+            </p>
+
+
+            <!-- NOMBRE DE USUARIO -->
+
+            <div class="campo">
+
+                <span class="icono">
+                    ♙
+                </span>
+
+                <input
+                    type="text"
+                    placeholder="Nombre de usuario"
+                >
+
+            </div>
+
+
+            <!-- CORREO -->
+
+            <div class="campo">
+
+                <span class="icono">
+                    ✉
+                </span>
+
+                <input
+                    type="email"
+                    placeholder="Correo electrónico"
+                >
+
+            </div>
+
+
+            <!-- IDENTIFICACIÓN -->
+
+            <div class="campo">
+
+                <span class="icono">
+                    ▣
+                </span>
+
+                <input
+                    type="text"
+                    placeholder="N. Identificación"
+                >
+
+            </div>
+
+
+            <!-- TELEFONO -->
+
+            <div class="campo">
+
+                <span class="icono">
+                    ☎
+                </span>
+
+                <input
+                    type="tel"
+                    placeholder="N. Teléfono"
+                >
+
+            </div>
+
+
+            <!-- CONTRASEÑA -->
+
+            <div class="campo">
+
+                <span class="icono">
+                    🔒
+                </span>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Contraseña"
+                >
+
+                <button
+                    class="mostrar"
+                    onclick="mostrarPassword()">
+
+                    ◉
+
+                </button>
+
+            </div>
+
+
+            <!-- BOTÓN REGISTRARSE -->
+
+            <button
+                class="btn-registrarse"
+                onclick="registrarse()">
+
+                Registrarse
+
+            </button>
+
+
+            <!-- INICIAR SESIÓN -->
+
+            <p class="iniciar">
+
+                ¿Ya tienes cuenta?
+
+                <button onclick="volverLogin()">
+                    Iniciar sesión
+                </button>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="registro.js"></script>
+
+</body>
+
+</html>

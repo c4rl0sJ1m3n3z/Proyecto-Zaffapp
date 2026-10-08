@@ -1,0 +1,452 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --azul: #3B8EF4;
+
+    --cyan: #03AEBF;
+
+    --turquesa: #22C4C7;
+
+    --morado: #7651E8;
+
+    --lila: #9A79F2;
+
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #222;
+
+    min-height: 100vh;
+
+}
+
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.registro-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+/* ==========================================
+   TARJETA
+========================================== */
+
+.registro-card {
+
+    width: 365px;
+
+    min-height: 550px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px 34px 25px;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35);
+
+}
+
+
+/* BORDE DEGRADADO */
+
+.registro-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: -8px;
+
+    left: -8px;
+
+    right: -8px;
+
+    bottom: -8px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            140deg,
+            var(--azul),
+            var(--morado)
+        );
+
+}
+
+
+/* ==========================================
+   BOTÓN VOLVER
+========================================== */
+
+.btn-volver {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 17px;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    line-height: 25px;
+
+}
+
+
+.btn-volver:hover {
+
+    color: var(--morado);
+
+}
+
+
+/* ==========================================
+   ICONO DE USUARIO
+========================================== */
+
+.icono-usuario {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 8px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--lila),
+            var(--morado)
+        );
+
+    position: relative;
+
+}
+
+
+/* CABEZA */
+
+.cabeza {
+
+    position: absolute;
+
+    width: 18px;
+
+    height: 18px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    top: 10px;
+
+    left: 20px;
+
+}
+
+
+/* CUERPO */
+
+.cuerpo {
+
+    position: absolute;
+
+    width: 35px;
+
+    height: 18px;
+
+    background: white;
+
+    border-radius: 20px 20px 12px 12px;
+
+    bottom: 9px;
+
+    left: 11px;
+
+}
+
+
+/* ==========================================
+   TITULO
+========================================== */
+
+.registro-card h1 {
+
+    text-align: center;
+
+    font-size: 21px;
+
+    color: #252525;
+
+    margin-top: 5px;
+
+}
+
+
+.subtitulo {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    color: #555;
+
+    margin-top: 4px;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ==========================================
+   CAMPOS
+========================================== */
+
+.campo {
+
+    width: 100%;
+
+    height: 38px;
+
+    background: #dddddf;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 10px;
+
+    margin-bottom: 9px;
+
+}
+
+
+/* ICONOS */
+
+.icono {
+
+    width: 23px;
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+/* INPUT */
+
+.campo input {
+
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #333;
+
+    font-size: 11px;
+
+}
+
+
+.campo input::placeholder {
+
+    color: #888;
+
+}
+
+
+/* ==========================================
+   BOTÓN MOSTRAR CONTRASEÑA
+========================================== */
+
+.mostrar {
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+}
+
+
+.mostrar:hover {
+
+    color: var(--morado);
+
+}
+
+
+/* ==========================================
+   BOTÓN REGISTRARSE
+========================================== */
+
+.btn-registrarse {
+
+    width: 100%;
+
+    height: 35px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--morado)
+        );
+
+    color: white;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+
+.btn-registrarse:hover {
+
+    transform: translateY(-1px);
+
+    filter: brightness(1.08);
+
+}
+
+
+/* ==========================================
+   TEXTO INICIAR SESIÓN
+========================================== */
+
+.iniciar {
+
+    text-align: center;
+
+    font-size: 10px;
+
+    color: #444;
+
+    margin-top: 13px;
+
+}
+
+
+.iniciar button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--morado);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+}
+
+
+.iniciar button:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 450px) {
+
+    .registro-container {
+
+        padding: 20px;
+
+    }
+
+
+    .registro-card {
+
+        width: 100%;
+
+        max-width: 365px;
+
+        padding-left: 25px;
+
+        padding-right: 25px;
+
+    }
+
+}

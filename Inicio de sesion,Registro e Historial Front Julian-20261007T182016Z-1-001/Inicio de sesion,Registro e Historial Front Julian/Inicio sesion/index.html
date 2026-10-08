@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front 1</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAFFAPP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN ================= -->
+    <section id="loginScreen" class="screen active">
+
+        <div class="auth-card">
+
+            <div class="logo">
+                <div class="logo-icon">◆</div>
+                <div class="logo-text">
+                    ZAFF<span>APP</span>
+                </div>
+            </div>
+
+            <h1>Bienvenido</h1>
+            <p class="subtitle">Inicia sesión para continuar</p>
+
+            <div class="input-box">
+                <span>✉</span>
+                <input 
+                    type="text" 
+                    placeholder="Correo electrónico / Teléfono">
+            </div>
+
+            <div class="input-box">
+                <span>▣</span>
+                <input 
+                    type="password" 
+                    id="loginPassword"
+                    placeholder="Contraseña">
+
+                <button onclick="mostrarPassword('loginPassword')">
+                    ◉
+                </button>
+            </div>
+
+            <div class="links">
+                <button>Iniciar sesión</button>
+
+                <button onclick="mostrarPantalla('registerScreen')">
+                    Registrarse
+                </button>
+            </div>
+
+            <button 
+                class="main-button"
+                onclick="mostrarPantalla('historyScreen')">
+                Iniciar sesión
+            </button>
+
+            <div class="separador">
+                <span>o</span>
+            </div>
+
+            <button class="google-button">
+                <b>G</b>
+                Continuar con Google
+            </button>
+
+            <button class="forgot">
+                ¿Olvidaste tu contraseña?
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTRO ================= -->
+    <section id="registerScreen" class="screen">
+
+        <div class="auth-card register">
+
+            <button 
+                class="back"
+                onclick="mostrarPantalla('loginScreen')">
+                ‹
+            </button>
+
+            <div class="profile-icon">
+                ●
+            </div>
+
+            <h1>Registro</h1>
+            <p class="subtitle">Crea tu cuenta</p>
+
+            <div class="input-box">
+                <span>♙</span>
+                <input 
+                    type="text"
+                    placeholder="Nombre de usuario">
+            </div>
+
+            <div class="input-box">
+                <span>✉</span>
+                <input 
+                    type="email"
+                    placeholder="Correo electrónico">
+            </div>
+
+            <div class="input-box">
+                <span>▣</span>
+                <input 
+                    type="text"
+                    placeholder="N. Identificación">
+            </div>
+
+            <div class="input-box">
+                <span>⌕</span>
+                <input 
+                    type="tel"
+                    placeholder="N. Teléfono">
+            </div>
+
+            <div class="input-box">
+                <span>▣</span>
+
+                <input 
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Contraseña">
+
+                <button 
+                    onclick="mostrarPassword('registerPassword')">
+                    ◉
+                </button>
+            </div>
+
+            <button 
+                class="main-button"
+                onclick="mostrarPantalla('loginScreen')">
+
+                Registrarse
+
+            </button>
+
+            <p class="cuenta">
+                ¿Ya tienes cuenta?
+
+                <button 
+                    onclick="mostrarPantalla('loginScreen')">
+
+                    Iniciar sesión
+
+                </button>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HISTORIAL ================= -->
+    <section id="historyScreen" class="screen dashboard-screen">
+
+        <div class="dashboard">
+
+            <!-- SIDEBAR -->
+
+            <aside class="sidebar">
+
+                <div class="side-logo">
+
+                    <div class="logo-icon small">
+                        ◆
+                    </div>
+
+                    <div class="logo-text">
+                        ZAFF<span>APP</span>
+                    </div>
+
+                </div>
+
+
+                <nav>
+
+                    <button class="nav active">
+                        ▤
+                        <span>Historia</span>
+                    </button>
+
+                    <button class="nav">
+                        ▥
+                        <span>Estadísticas</span>
+                    </button>
+
+                    <button class="nav">
+                        ⚑
+                        <span>Reportes</span>
+                    </button>
+
+                    <button class="nav">
+                        ▧
+                        <span>Mapa</span>
+                    </button>
+
+                    <button class="nav">
+                        ♧
+                        <span>Notificaciones</span>
+                    </button>
+
+                    <button class="nav">
+                        ⚙
+                        <span>Configuración</span>
+                    </button>
+
+                </nav>
+
+
+                <div class="user">
+
+                    <div class="avatar">
+                        ●
+                    </div>
+
+                    <div>
+                        <strong>
+                            Nombre_de_usuario
+                        </strong>
+
+                        <small>
+                            Ver perfil ›
+                        </small>
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <!-- CONTENIDO -->
+
+            <main class="content">
+
+                <header class="topbar">
+
+                    <div></div>
+
+                    <div class="top-icons">
+
+                        <button>♧</button>
+                        <button>⚙</button>
+
+                        <div class="mini-avatar">
+                            ●
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <div class="page">
+
+                    <h2>Historial</h2>
+
+                    <p class="description">
+                        Consulta tus reportes realizados y su estado actual.
+                    </p>
+
+
+                    <!-- BUSCADOR -->
+
+                    <div class="search">
+
+                        <input 
+                            type="text"
+                            id="searchInput"
+                            placeholder="">
+
+                        <span>⌕</span>
+
+                    </div>
+
+
+                    <!-- FILTROS -->
+
+                    <div class="tabs">
+
+                        <button 
+                            class="tab active"
+                            onclick="filtrar('Todos', this)">
+                            Todos
+                        </button>
+
+                        <button 
+                            class="tab"
+                            onclick="filtrar('En revisión', this)">
+                            En revisión
+                        </button>
+
+                        <button 
+                            class="tab"
+                            onclick="filtrar('En proceso', this)">
+                            En proceso
+                        </button>
+
+                        <button 
+                            class="tab"
+                            onclick="filtrar('Resueltos', this)">
+                            Resueltos
+                        </button>
+
+                    </div>
+
+
+                    <!-- TABLA -->
+
+                    <div class="table">
+
+                        <div class="table-header">
+
+                            <span>Reporte</span>
+                            <span>Ubicación</span>
+                            <span>Fecha</span>
+                            <span>Prioridad</span>
+
+                        </div>
+
+
+                        <!-- REPORTE 1 -->
+
+                        <div 
+                            class="report"
+                            data-status="En proceso">
+
+                            <div class="report-info">
+
+                                <div class="report-image road"></div>
+
+                                <div>
+
+                                    <strong>
+                                        Vía en mal estado
+                                    </strong>
+
+                                    <small>
+                                        • Infraestructura
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="location">
+
+                                📍 Calle 26 con Carrera 9
+
+                                <small>
+                                    Soacha
+                                </small>
+
+                            </div>
+
+
+                            <div>
+                                22 de Mayo de 2026
+                            </div>
+
+
+                            <div>
+                                <span class="priority high">
+                                    Alta
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- REPORTE 2 -->
+
+                        <div 
+                            class="report"
+                            data-status="En revisión">
+
+                            <div class="report-info">
+
+                                <div class="report-image protest"></div>
+
+                                <div>
+
+                                    <strong>
+                                        Protestas
+                                    </strong>
+
+                                    <small>
+                                        • Manifestaciones
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="location">
+
+                                📍 Carrera 7 con Calle 15
+
+                                <small>
+                                    Parque Central
+                                </small>
+
+                            </div>
+
+
+                            <div>
+                                22 de Mayo de 2026
+                            </div>
+
+
+                            <div>
+
+                                <span class="priority medium">
+                                    Media
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- REPORTE 3 -->
+
+                        <div 
+                            class="report"
+                            data-status="Resueltos">
+
+                            <div class="report-info">
+
+                                <div class="report-image robbery"></div>
+
+                                <div>
+
+                                    <strong>
+                                        Hurto
+                                    </strong>
+
+                                    <small>
+                                        • Robos
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="location">
+
+                                📍 Calle 3 con Carrera 2
+
+                                <small>
+                                    Barrio El Progreso
+                                </small>
+
+                            </div>
+
+
+                            <div>
+                                21 de Mayo de 2026
+                            </div>
+
+
+                            <div>
+
+                                <span class="priority low">
+                                    Baja
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+</body>
+</html>
