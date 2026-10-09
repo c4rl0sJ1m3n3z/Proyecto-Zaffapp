@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zaffapp - Historial</title>
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="logo.png" alt="Logo Zaffapp">
+            </div>
+
+            <span class="logo-text"> Zaffapp</span>
+
+            <button class="menu-btn" type="button" aria-label="Menú">
+                ☰
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        <i>📄</i>
+                        <span>Historial</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i>📊</i>
+                        <span>Estadísticas</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i>🚩</i>
+                        <span>Reportes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i>🗺️</i>
+                        <span>Mapa</span>
+                    </a>
+                </li>
+            </ul>
+
+            <hr class="divider">
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i>🔔</i>
+                        <span>Notificaciones</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i>⚙️</i>
+                        <span>Configuración</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- USUARIO -->
+        <div class="sidebar-user">
+            <div class="user-avatar-large"></div>
+
+            <div class="user-info">
+                <span class="username">Nombre_de_usuario</span>
+                <a href="#" class="view-profile">Ver perfil &gt;</a>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+                <button class="icon-btn" type="button" aria-label="Regresar">
+                    ‹
+                </button>
+
+                <button class="icon-btn" type="button" aria-label="Menú">
+                    ☰
+                </button>
+            </div>
+
+            <div class="topbar-right">
+                <button class="icon-btn" type="button" aria-label="Notificaciones">
+                    🔔
+                </button>
+
+                <button class="icon-btn" type="button" aria-label="Configuración">
+                    ⚙️
+                </button>
+
+                <div class="user-profile">
+                    <div class="user-avatar-small"></div>
+                    <span>Nombre de usuario</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- CONTENIDO DE LA PÁGINA -->
+        <section class="content">
+
+            <div class="page-header">
+                <div>
+                    <h1>Historial</h1>
+
+                    <p>
+                        Consulta los reportes realizados y su estado actual.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- FILTROS POR ESTADO -->
+            <div class="filters-container" role="group"
+                 aria-label="Filtrar reportes por estado">
+
+                <button
+                    type="button"
+                    class="tab active"
+                    data-filter="todos"
+                    aria-pressed="true"
+                >
+                    Todos
+                    <span class="tab-count" data-count-for="todos">0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="tab"
+                    data-filter="revision"
+                    aria-pressed="false"
+                >
+                    En revisión
+                    <span class="tab-count" data-count-for="revision">0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="tab"
+                    data-filter="proceso"
+                    aria-pressed="false"
+                >
+                    En proceso
+                    <span class="tab-count" data-count-for="proceso">0</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="tab"
+                    data-filter="resueltos"
+                    aria-pressed="false"
+                >
+                    Resueltos
+                    <span class="tab-count" data-count-for="resueltos">0</span>
+                </button>
+
+            </div>
+
+
+            <!-- TABLA DE REPORTES -->
+            <div class="data-table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reporte</th>
+                            <th>Ubicación</th>
+                            <th>Fecha</th>
+                            <th>Prioridad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="reports-table">
+
+                        <!-- REPORTE 1: EN REVISIÓN -->
+                        <tr class="report-row" data-status="revision">
+
+                            <td>
+                                <div class="report-info">
+                                    <div class="report-img">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+
+                                    <div class="report-text">
+                                        <strong>Vía en mal estado</strong>
+                                        <span>• Infraestructura</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="location-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                    <div class="location-text">
+                                        Calle 26 con Carrera 9
+                                        <span>Soacha</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>22 de mayo de 2026</td>
+
+                            <td>
+                                <span class="priority-dot priority-high"></span>
+                                Alta
+                            </td>
+
+                            <td>
+                                <span class="status-badge status-review">
+                                    En revisión
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- REPORTE 2: EN PROCESO -->
+                        <tr class="report-row" data-status="proceso">
+
+                            <td>
+                                <div class="report-info">
+                                    <div class="report-img">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+
+                                    <div class="report-text">
+                                        <strong>Manifestaciones</strong>
+                                        <span>• Orden público</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="location-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                    <div class="location-text">
+                                        Carrera 7 con Calle 15
+                                        <span>Parque Central</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>21 de mayo de 2026</td>
+
+                            <td>
+                                <span class="priority-dot priority-medium"></span>
+                                Media
+                            </td>
+
+                            <td>
+                                <span class="status-badge status-process">
+                                    En proceso
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- REPORTE 3: RESUELTO -->
+                        <tr class="report-row" data-status="resueltos">
+
+                            <td>
+                                <div class="report-info">
+                                    <div class="report-img">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+
+                                    <div class="report-text">
+                                        <strong>Alumbrado dañado</strong>
+                                        <span>• Servicios públicos</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="location-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                    <div class="location-text">
+                                        Calle 13 con Carrera 8
+                                        <span>Centro de Soacha</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>20 de mayo de 2026</td>
+
+                            <td>
+                                <span class="priority-dot priority-medium"></span>
+                                Media
+                            </td>
+
+                            <td>
+                                <span class="status-badge status-resolved">
+                                    Resuelto
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- REPORTE 4: EN REVISIÓN -->
+                        <tr class="report-row" data-status="revision">
+
+                            <td>
+                                <div class="report-info">
+                                    <div class="report-img">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+
+                                    <div class="report-text">
+                                        <strong>Actividad sospechosa</strong>
+                                        <span>• Seguridad ciudadana</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="location-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                    <div class="location-text">
+                                        Avenida Indumil
+                                        <span>Soacha</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>19 de mayo de 2026</td>
+
+                            <td>
+                                <span class="priority-dot priority-high"></span>
+                                Alta
+                            </td>
+
+                            <td>
+                                <span class="status-badge status-review">
+                                    En revisión
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- REPORTE 5: EN PROCESO -->
+                        <tr class="report-row" data-status="proceso">
+
+                            <td>
+                                <div class="report-info">
+                                    <div class="report-img">
+                                        <i class="fas fa-car-crash"></i>
+                                    </div>
+
+                                    <div class="report-text">
+                                        <strong>Accidente de tránsito</strong>
+                                        <span>• Movilidad</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="location-info">
+                                    <i class="fas fa-map-marker-alt"></i>
+
+                                    <div class="location-text">
+                                        Autopista Sur
+                                        <span>Soacha</span>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td>18 de mayo de 2026</td>
+
+                            <td>
+                                <span class="priority-dot priority-high"></span>
+                                Alta
+                            </td>
+
+                            <td>
+                                <span class="status-badge status-process">
+                                    En proceso
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- MENSAJE CUANDO NO HAY RESULTADOS -->
+                        <tr id="empty-state" hidden>
+                            <td colspan="5" class="empty-message">
+                                <i class="fas fa-folder-open"></i>
+                                <p>No hay reportes en esta categoría.</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FUNCIONALIDAD DE LAS PESTAÑAS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const tabs = document.querySelectorAll(".tab");
+            const reports = document.querySelectorAll(".report-row");
+            const emptyState = document.getElementById("empty-state");
+
+            const countElements = document.querySelectorAll("[data-count-for]");
+
+            // Actualiza los contadores de las pestañas.
+            function updateCounts() {
+
+                const counts = {
+                    todos: reports.length,
+                    revision: 0,
+                    proceso: 0,
+                    resueltos: 0
+                };
+
+                reports.forEach(function (report) {
+                    const status = report.dataset.status;
+
+                    if (Object.prototype.hasOwnProperty.call(counts, status)) {
+                        counts[status]++;
+                    }
+                });
+
+                countElements.forEach(function (element) {
+                    const filter = element.dataset.countFor;
+                    element.textContent = counts[filter] ?? 0;
+                });
+            }
+
+            // Muestra únicamente los reportes de la categoría seleccionada.
+            function filterReports(filter) {
+
+                let visibleReports = 0;
+
+                reports.forEach(function (report) {
+
+                    const matches =
+                        filter === "todos" ||
+                        report.dataset.status === filter;
+
+                    report.hidden = !matches;
+
+                    if (matches) {
+                        visibleReports++;
+                    }
+                });
+
+                // Actualiza el estado visual de las pestañas.
+                tabs.forEach(function (tab) {
+
+                    const isActive = tab.dataset.filter === filter;
+
+                    tab.classList.toggle("active", isActive);
+                    tab.setAttribute("aria-pressed", String(isActive));
+                });
+
+                // Muestra un mensaje si la categoría está vacía.
+                emptyState.hidden = visibleReports !== 0;
+            }
+
+            // Escucha los clics en las pestañas.
+            tabs.forEach(function (tab) {
+
+                tab.addEventListener("click", function () {
+                    filterReports(tab.dataset.filter);
+                });
+
+            });
+
+            updateCounts();
+            filterReports("todos");
+
+        });
+    </script>
+
+</body>
+</html>
