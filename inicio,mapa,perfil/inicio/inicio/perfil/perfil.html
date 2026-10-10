@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Zaffapp - Mi perfil</title>
+  <link rel="stylesheet" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/estilos.css">
+  <link rel="stylesheet" href="perfil.css">
+  <script src="perfil.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="" class="brand-logo" aria-hidden="true">
+        <span class="brand-name">Zaffapp</span>
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Contraer menú" title="Menú">☰</button>
+      </div>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link" href="../inicio.html"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Inicio</span></a>
+        <a class="nav-link" href="../../../../Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian-20261007T182016Z-1-001/Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian/prueba_historial/historial.prueba.html"><span class="nav-icon" aria-hidden="true">📄</span><span class="nav-label">Historial</span></a>
+        <a class="nav-link" href="../../../../front_estadisticas_reportes/estadisticas/estadisticas.html"><span class="nav-icon" aria-hidden="true">📊</span><span class="nav-label">Estadísticas</span></a>
+        <a class="nav-link" href="../../../../front_estadisticas_reportes/reportes/reportes.html"><span class="nav-icon" aria-hidden="true">🚩</span><span class="nav-label">Reportes</span></a>
+        <a class="nav-link" href="../mapa/mapa.html"><span class="nav-icon" aria-hidden="true">🗺️</span><span class="nav-label">Mapa</span></a>
+        <div class="nav-divider"></div>
+        <a class="nav-link" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html"><span class="nav-icon" aria-hidden="true">🔔</span><span class="nav-label">Notificaciones</span></a>
+        <a class="nav-link" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html"><span class="nav-icon" aria-hidden="true">⚙️</span><span class="nav-label">Configuración</span></a>
+      </nav>
+
+      <a class="sidebar-user profile-entry" href="perfil.html" aria-label="Abrir perfil de usuario">
+        <span class="avatar avatar-large profile-avatar" id="sidebarAvatar" aria-hidden="true">U</span>
+        <span class="user-details">
+          <strong id="sidebarUsername">Nombre_de_usuario</strong>
+        </span>
+      </a>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
+        </div>
+        <div class="topbar-right">
+          <a class="top-action" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html" aria-label="Ver notificaciones" title="Notificaciones">🔔</a>
+          <a class="top-action" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html" aria-label="Abrir configuración" title="Configuración">⚙️</a>
+          <a class="topbar-profile" href="perfil.html" aria-label="Mi perfil">
+            <span class="avatar avatar-small profile-avatar" id="topbarAvatar" aria-hidden="true">U</span>
+            <span class="topbar-username" id="topbarUsername">Nombre_de_usuario</span>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="page-heading" aria-labelledby="pageTitle">
+          <div>
+            <h1 id="pageTitle">Mi perfil</h1>
+            <p>Consulta y actualiza tu información de cuenta.</p>
+          </div>
+          <div class="heading-actions">
+            <span class="save-status" id="saveStatus" role="status" aria-live="polite">Todos los cambios están guardados</span>
+            <button class="primary-button" id="saveProfile" type="submit" form="profileForm">Guardar cambios</button>
+          </div>
+        </section>
+
+        <section class="profile-overview" aria-label="Resumen del perfil">
+          <div class="profile-identity">
+            <div class="profile-avatar-large" id="profileInitials" aria-hidden="true">U</div>
+            <div class="profile-identity-copy">
+              <span class="profile-eyebrow">Cuenta Zaffapp</span>
+              <h2 id="profileDisplayName">Nombre_de_usuario</h2>
+              <p id="profileDisplayEmail">usuario@gmail.com</p>
+            </div>
+          </div>
+          <a class="secondary-button profile-settings-link" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html">
+            <span aria-hidden="true">⚙</span> Preferencias y privacidad
+          </a>
+        </section>
+
+        <div class="profile-layout">
+          <section class="settings-card profile-form-card" aria-labelledby="accountTitle">
+            <div class="card-heading">
+              <div class="section-icon user-icon" aria-hidden="true">♙</div>
+              <div>
+                <h2 id="accountTitle">Información personal</h2>
+                <p>Estos datos se guardan en este navegador.</p>
+              </div>
+            </div>
+
+            <form id="profileForm" class="profile-form">
+              <div class="profile-field">
+                <label for="username">Nombre de usuario</label>
+                <input id="username" name="username" type="text" maxlength="40" autocomplete="username" required>
+                <small>Este nombre aparece en tu espacio de trabajo.</small>
+              </div>
+              <div class="profile-field">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" maxlength="100" autocomplete="email" required>
+                <small>Se utiliza como dato de contacto de tu perfil.</small>
+              </div>
+              <div class="profile-field">
+                <label for="phone">Número de teléfono</label>
+                <input id="phone" name="phone" type="tel" maxlength="22" autocomplete="tel" required>
+                <small>Puedes actualizarlo desde este formulario.</small>
+              </div>
+              <div class="profile-form-actions">
+                <span class="profile-local-note"><span aria-hidden="true">🔒</span> La información se almacena localmente.</span>
+                <button class="primary-button" type="submit">Guardar perfil</button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="profile-side-column">
+            <section class="settings-card profile-activity-card" aria-labelledby="activityTitle">
+              <div class="card-heading">
+                <div class="section-icon activity-icon" aria-hidden="true">▤</div>
+                <div>
+                  <h2 id="activityTitle">Mi actividad</h2>
+                  <p>Resumen de tus reportes en este navegador.</p>
+                </div>
+              </div>
+              <div class="activity-metrics">
+                <div><span>Reportes creados</span><strong id="createdReportsCount">0</strong></div>
+                <div><span>Recibidos</span><strong id="receivedReportsCount">0</strong></div>
+                <div><span>En revisión</span><strong id="reviewReportsCount">0</strong></div>
+                <div><span>Resueltos</span><strong id="resolvedReportsCount">0</strong></div>
+              </div>
+              <a class="profile-text-link" href="../../../../Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian-20261007T182016Z-1-001/Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian/prueba_historial/historial.prueba.html">Consultar historial <span aria-hidden="true">→</span></a>
+            </section>
+
+            <section class="profile-security-card" aria-labelledby="securityTitle">
+              <div class="security-icon" aria-hidden="true">♢</div>
+              <h2 id="securityTitle">Seguridad de la cuenta</h2>
+              <p>Administra tu contraseña y las opciones de privacidad desde la configuración.</p>
+              <a class="secondary-button" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html">Abrir configuración</a>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú" tabindex="-1"></button>
+  <div class="toast" id="profileToast" role="status" aria-live="polite"></div>
+</body>
+</html>

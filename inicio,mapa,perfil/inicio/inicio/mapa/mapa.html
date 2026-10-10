@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Zaffapp - Mapa</title>
+  <link rel="stylesheet" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/estilos.css">
+  <link rel="stylesheet" href="mapa.css">
+  <script src="mapa.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img src="logo.png" alt="" class="brand-logo" aria-hidden="true">
+        <span class="brand-name">Zaffapp</span>
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Contraer menú" title="Menú">☰</button>
+      </div>
+
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link" href="../inicio.html"><span class="nav-icon" aria-hidden="true">⌂</span><span class="nav-label">Inicio</span></a>
+        <a class="nav-link" href="../../../../Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian-20261007T182016Z-1-001/Inicio%20de%20sesion,Registro%20e%20Historial%20Front%20Julian/prueba_historial/historial.prueba.html"><span class="nav-icon" aria-hidden="true">📄</span><span class="nav-label">Historial</span></a>
+        <a class="nav-link" href="../../../../front_estadisticas_reportes/estadisticas/estadisticas.html"><span class="nav-icon" aria-hidden="true">📊</span><span class="nav-label">Estadísticas</span></a>
+        <a class="nav-link" href="../../../../front_estadisticas_reportes/reportes/reportes.html"><span class="nav-icon" aria-hidden="true">🚩</span><span class="nav-label">Reportes</span></a>
+        <a class="nav-link active" href="mapa.html" aria-current="page"><span class="nav-icon" aria-hidden="true">🗺️</span><span class="nav-label">Mapa</span></a>
+        <div class="nav-divider"></div>
+        <a class="nav-link" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html"><span class="nav-icon" aria-hidden="true">🔔</span><span class="nav-label">Notificaciones</span></a>
+        <a class="nav-link" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html"><span class="nav-icon" aria-hidden="true">⚙️</span><span class="nav-label">Configuración</span></a>
+      </nav>
+
+      <a class="sidebar-user profile-entry" href="../perfil/perfil.html" aria-label="Abrir perfil">
+        <span class="avatar avatar-large profile-avatar" id="sidebarAvatar" aria-hidden="true">U</span>
+        <span class="user-details"><strong id="sidebarUsername">Nombre_de_usuario</strong></span>
+      </a>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
+        </div>
+        <div class="topbar-right">
+          <a class="top-action" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html" aria-label="Ver notificaciones" title="Notificaciones">🔔</a>
+          <a class="top-action" href="../../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html" aria-label="Abrir configuración" title="Configuración">⚙️</a>
+          <a class="topbar-profile" href="../perfil/perfil.html" aria-label="Abrir perfil">
+            <span class="avatar avatar-small profile-avatar" id="topbarAvatar" aria-hidden="true">U</span>
+            <span class="topbar-username" id="topbarUsername">Nombre_de_usuario</span>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="page-heading" aria-labelledby="pageTitle">
+          <div>
+            <h1 id="pageTitle">Mapa de reportes</h1>
+            <p>Explora las situaciones registradas y su estado en el mapa comunitario.</p>
+          </div>
+          <div class="heading-actions">
+            <a class="primary-button" href="../../../../front_estadisticas_reportes/reportes/reportes.html"><span aria-hidden="true">＋</span> Crear reporte</a>
+          </div>
+        </section>
+
+        <section class="stats-grid map-summary" aria-label="Resumen de reportes en el mapa">
+          <article class="stat-card">
+            <span class="stat-label">Reportes visibles</span>
+            <strong class="stat-number" id="visibleCount">0</strong>
+            <small class="stat-note">Coinciden con los filtros</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Pendientes de atención</span>
+            <strong class="stat-number" id="pendingCount">0</strong>
+            <small class="stat-note stat-note-alert">Recibidos o en revisión</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Resueltos</span>
+            <strong class="stat-number" id="resolvedCount">0</strong>
+            <small class="stat-note stat-note-good">Casos atendidos</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Categorías activas</span>
+            <strong class="stat-number" id="categoryCount">0</strong>
+            <small class="stat-note">En la selección actual</small>
+          </article>
+        </section>
+
+        <section class="map-toolbar" aria-label="Filtrar reportes en el mapa">
+          <label class="map-search" for="mapSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="mapSearch" type="search" placeholder="Buscar por descripción o ubicación..." autocomplete="off">
+          </label>
+          <label class="map-select" for="categoryFilter">
+            <span class="sr-only">Filtrar por categoría</span>
+            <select id="categoryFilter">
+              <option value="all">Todas las categorías</option>
+              <option value="Seguridad">Seguridad</option>
+              <option value="Vía pública">Vía pública</option>
+              <option value="Alumbrado">Alumbrado</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+          <label class="map-select" for="statusFilter">
+            <span class="sr-only">Filtrar por estado</span>
+            <select id="statusFilter">
+              <option value="all">Todos los estados</option>
+              <option value="Recibido">Recibido</option>
+              <option value="En revisión">En revisión</option>
+              <option value="En proceso">En proceso</option>
+              <option value="Resuelto">Resuelto</option>
+            </select>
+          </label>
+          <button class="clear-map-filters" id="clearFilters" type="button">Limpiar filtros</button>
+        </section>
+
+        <section class="map-layout" aria-label="Mapa y reportes">
+          <div class="map-panel">
+            <div class="map-panel-heading">
+              <div>
+                <h2>Actividad comunitaria</h2>
+                <p><span class="map-status-dot" aria-hidden="true"></span> <span id="mapResultLabel">Cargando reportes...</span></p>
+              </div>
+              <div class="map-zoom-controls" aria-label="Controles del mapa">
+                <button type="button" id="zoomIn" aria-label="Acercar mapa" title="Acercar">＋</button>
+                <button type="button" id="zoomOut" aria-label="Alejar mapa" title="Alejar">−</button>
+                <button type="button" id="resetMap" aria-label="Restablecer vista del mapa" title="Restablecer vista">⌖</button>
+              </div>
+            </div>
+
+            <div class="map-canvas" id="mapCanvas" role="group" aria-label="Mapa esquemático interactivo de reportes">
+              <div class="map-scene" id="mapScene">
+                <div class="map-waterway" aria-hidden="true"></div>
+                <div class="map-park park-one" aria-hidden="true"><span>Parque San José</span></div>
+                <div class="map-park park-two" aria-hidden="true"><span>Zona verde</span></div>
+                <div class="map-neighborhood neighborhood-one" aria-hidden="true">Centro</div>
+                <div class="map-neighborhood neighborhood-two" aria-hidden="true">San José</div>
+                <div class="map-neighborhood neighborhood-three" aria-hidden="true">La Esperanza</div>
+                <div class="map-street street-one" aria-hidden="true"><span>Calle 12</span></div>
+                <div class="map-street street-two" aria-hidden="true"><span>Carrera 8</span></div>
+                <div class="map-street street-three" aria-hidden="true"><span>Avenida 6</span></div>
+                <div class="map-street street-four" aria-hidden="true"><span>Carrera 15</span></div>
+                <div class="map-street street-five" aria-hidden="true"><span>Calle 20</span></div>
+                <div class="map-street street-six" aria-hidden="true"><span>Calle 9</span></div>
+                <div class="map-block block-one" aria-hidden="true"></div>
+                <div class="map-block block-two" aria-hidden="true"></div>
+                <div class="map-block block-three" aria-hidden="true"></div>
+                <div class="map-block block-four" aria-hidden="true"></div>
+                <div class="map-block block-five" aria-hidden="true"></div>
+                <div class="map-block block-six" aria-hidden="true"></div>
+                <div class="map-marker-layer" id="markerLayer" aria-label="Marcadores de reportes"></div>
+              </div>
+              <div class="map-compass" aria-hidden="true"><span>N</span> ↑</div>
+              <div class="map-scale" aria-hidden="true"><span></span> Vista esquemática</div>
+              <div class="map-empty" id="mapEmpty" hidden>No hay reportes que coincidan con estos filtros.</div>
+            </div>
+            <p class="map-disclaimer">Ubicaciones representadas de forma esquemática para esta demostración; no corresponden a coordenadas geográficas exactas.</p>
+            <div class="map-legend" aria-label="Leyenda de estados">
+              <span><i class="legend-dot received"></i>Recibido</span>
+              <span><i class="legend-dot review"></i>En revisión</span>
+              <span><i class="legend-dot process"></i>En proceso</span>
+              <span><i class="legend-dot resolved"></i>Resuelto</span>
+            </div>
+          </div>
+
+          <aside class="map-side-panel" aria-label="Lista y detalle de reportes">
+            <div class="map-side-heading">
+              <div><h2>Reportes cercanos</h2><p id="listResultLabel">0 resultados</p></div>
+              <span class="map-list-icon" aria-hidden="true">⌖</span>
+            </div>
+            <div class="map-report-list" id="reportList" aria-live="polite"></div>
+            <section class="map-detail" id="reportDetail" aria-live="polite">
+              <div class="detail-placeholder-icon" aria-hidden="true">⌖</div>
+              <h3>Selecciona un marcador</h3>
+              <p>Elige un punto del mapa o un reporte de la lista para consultar sus detalles.</p>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú" tabindex="-1"></button>
+  <div class="toast" id="mapToast" role="status" aria-live="polite"></div>
+</body>
+</html>
