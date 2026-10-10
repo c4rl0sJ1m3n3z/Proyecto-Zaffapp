@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaffapp - Configuración</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Menú lateral: conserva la misma estructura visual de Reportes -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-logo" aria-hidden="true">🛡️</div>
+                <span class="brand-name">Zaffapp</span>
+                <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Contraer menú">☰</button>
+            </div>
+
+            <nav class="navigation" aria-label="Navegación principal">
+                <a class="nav-link" href="#historial"><span class="nav-icon">📄</span><span class="nav-label">Historial</span></a>
+                <a class="nav-link" href="#estadisticas"><span class="nav-icon">📊</span><span class="nav-label">Estadísticas</span></a>
+                <a class="nav-link" href="#reportes"><span class="nav-icon">🚩</span><span class="nav-label">Reportes</span></a>
+                <a class="nav-link" href="#mapa"><span class="nav-icon">🗺️</span><span class="nav-label">Mapa</span></a>
+                <div class="nav-divider"></div>
+                <a class="nav-link" href="#notificaciones"><span class="nav-icon">🔔</span><span class="nav-label">Notificaciones</span></a>
+                <a class="nav-link active" href="configuracion.html" aria-current="page"><span class="nav-icon">⚙️</span><span class="nav-label">Configuración</span></a>
+            </nav>
+
+            <div class="sidebar-user">
+                <div class="avatar avatar-large" aria-hidden="true"> </div>
+                <div class="user-details"><strong id="sidebarUsername">Nombre_de_usuario</strong><a href="#perfil">Ver perfil &gt;</a></div>
+            </div>
+        </aside>
+
+        <div class="main-shell">
+            <!-- Barra superior alineada con la página Reportes -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="topbar-icon back-button" type="button" aria-label="Volver" title="Volver" onclick="history.length > 1 ? history.back() : null">‹</button>
+                    <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
+                </div>
+                <div class="topbar-right">
+                    <a class="top-action" href="#notificaciones" aria-label="Notificaciones" title="Notificaciones">🔔</a>
+                    <a class="top-action" href="configuracion.html" aria-label="Configuración" title="Configuración">⚙️</a>
+                    <div class="avatar avatar-small" aria-hidden="true"></div>
+                    <span class="topbar-username" id="topbarUsername">Nombre de usuario</span>
+                </div>
+            </header>
+
+            <main class="page-content">
+                <div class="page-heading">
+                    <div>
+                        <h1>Configuración</h1>
+                        <p>Administra tus preferencias y la configuración de tu cuenta</p>
+                    </div>
+                    <button class="primary-button" id="saveChanges" type="button">Guardar cambios</button>
+                </div>
+
+                <div class="settings-layout">
+                    <!-- Perfil y cuenta -->
+                    <section class="settings-card profile-card" aria-labelledby="profileTitle">
+                        <div class="card-heading">
+                            <div class="section-icon user-icon" aria-hidden="true">♙</div>
+                            <div>
+                                <h2 id="profileTitle">Perfil y cuenta</h2>
+                                <p>Actualiza tu información personal y datos de contacto</p>
+                            </div>
+                        </div>
+
+                        <div class="setting-row account-row" data-field="username">
+                            <div class="row-icon" aria-hidden="true">♙</div>
+                            <div class="row-label"><label for="username">Nombre de usuario</label></div>
+                            <div class="row-value"><span class="value-text" id="usernameText">Nombre_de_usuario</span><input id="username" class="edit-input" value="Nombre_de_usuario" maxlength="40" hidden></div>
+                            <button class="edit-button" type="button" data-edit="username" aria-label="Editar nombre de usuario" title="Editar">✎</button>
+                        </div>
+
+                        <div class="setting-row account-row" data-field="email">
+                            <div class="row-icon" aria-hidden="true">✉</div>
+                            <div class="row-label"><label for="email">Correo electrónico</label></div>
+                            <div class="row-value"><span class="value-text" id="emailText">usuario@gmail.com</span><input id="email" class="edit-input" type="email" value="usuario@gmail.com" maxlength="100" hidden></div>
+                            <button class="edit-button" type="button" data-edit="email" aria-label="Editar correo electrónico" title="Editar">✎</button>
+                        </div>
+
+                        <div class="setting-row account-row" data-field="phone">
+                            <div class="row-icon" aria-hidden="true">♧</div>
+                            <div class="row-label"><label for="phone">Número de teléfono</label></div>
+                            <div class="row-value"><span class="value-text" id="phoneText">+57 0000000000</span><input id="phone" class="edit-input" type="tel" value="+57 0000000000" maxlength="22" hidden></div>
+                            <button class="edit-button" type="button" data-edit="phone" aria-label="Editar número de teléfono" title="Editar">✎</button>
+                        </div>
+
+                        <div class="setting-row account-row password-row">
+                            <div class="row-icon" aria-hidden="true">♙</div>
+                            <div class="row-label"><span class="field-label">Contraseña</span></div>
+                            <div class="row-value"><span class="value-text password-dots">••••••••••••</span></div>
+                            <button class="secondary-button password-button" id="openPassword" type="button"><span aria-hidden="true">♙</span> Cambiar</button>
+                        </div>
+                    </section>
+
+                    <!-- Privacidad -->
+                    <section class="settings-card privacy-card" aria-labelledby="privacyTitle">
+                        <div class="card-heading">
+                            <div class="section-icon shield-icon" aria-hidden="true">♢</div>
+                            <div>
+                                <h2 id="privacyTitle">Privacidad</h2>
+                                <p>Gestiona la visibilidad de tu información y datos</p>
+                            </div>
+                        </div>
+
+                        <div class="setting-row privacy-row">
+                            <div class="privacy-copy"><h3>Perfil público</h3><p>Permitir que otros usuarios vean tu perfil público</p></div>
+                            <label class="switch" aria-label="Perfil público"><input type="checkbox" id="publicProfile" checked><span class="switch-slider"></span></label>
+                        </div>
+                        <div class="setting-row privacy-row">
+                            <div class="privacy-copy"><h3>Mostrar ubicación aproximada</h3><p>Permitir que se muestre tu ubicación aproximada en los reportes</p></div>
+                            <label class="switch" aria-label="Mostrar ubicación aproximada"><input type="checkbox" id="showLocation"><span class="switch-slider"></span></label>
+                        </div>
+                        <div class="setting-row privacy-row">
+                            <div class="privacy-copy"><h3>Compartir estadísticas anónimas</h3><p>Ayúdanos a mejorar Zaffapp compartiendo datos de uso sin identificarte</p></div>
+                            <label class="switch" aria-label="Compartir estadísticas anónimas"><input type="checkbox" id="shareStats" checked><span class="switch-slider"></span></label>
+                        </div>
+                    </section>
+                </div>
+                <p class="privacy-note"><span aria-hidden="true">🔒</span> Tus datos se usan para administrar tu cuenta y tus preferencias de Zaffapp.</p>
+            </main>
+        </div>
+    </div>
+
+    <!-- Ventana para cambiar contraseña -->
+    <div class="modal-backdrop" id="passwordModal" hidden>
+        <section class="password-modal" role="dialog" aria-modal="true" aria-labelledby="passwordModalTitle">
+            <button class="modal-close" id="closePassword" type="button" aria-label="Cerrar">×</button>
+            <div class="modal-heading-icon" aria-hidden="true">🔒</div>
+            <h2 id="passwordModalTitle">Cambiar contraseña</h2>
+            <p>Elige una contraseña segura para proteger tu cuenta.</p>
+            <form id="passwordForm">
+                <label for="currentPassword">Contraseña actual</label>
+                <input id="currentPassword" type="password" autocomplete="current-password" required minlength="4">
+                <label for="newPassword">Nueva contraseña</label>
+                <input id="newPassword" type="password" autocomplete="new-password" required minlength="8">
+                <label for="confirmPassword">Confirmar nueva contraseña</label>
+                <input id="confirmPassword" type="password" autocomplete="new-password" required minlength="8">
+                <p class="form-error" id="passwordError" role="alert"></p>
+                <div class="modal-actions"><button class="secondary-button" id="cancelPassword" type="button">Cancelar</button><button class="primary-button" type="submit">Actualizar contraseña</button></div>
+            </form>
+        </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>
+(() => {
+    const $ = (selector) => document.querySelector(selector);
+    const toast = $('#toast');
+    let toastTimer;
+
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    // Contraer el menú como en la vista de Reportes; en pantallas pequeñas abre/cierra el panel.
+    function toggleSidebar() {
+        if (window.matchMedia('(max-width: 640px)').matches) {
+            document.body.classList.toggle('mobile-menu-open');
+        } else {
+            document.body.classList.toggle('sidebar-collapsed');
+        }
+    }
+    $('#sidebarToggle').addEventListener('click', toggleSidebar);
+    $('#topbarMenuToggle').addEventListener('click', toggleSidebar);
+
+    // Carga preferencias guardadas localmente, si existen.
+    const textFields = ['username', 'email', 'phone'];
+    const preferenceFields = ['publicProfile', 'showLocation', 'shareStats'];
+    try {
+        const saved = JSON.parse(localStorage.getItem('zaffapp-settings') || '{}');
+        textFields.forEach((field) => {
+            if (typeof saved[field] === 'string' && saved[field].trim()) {
+                $('#' + field).value = saved[field];
+            }
+        });
+        preferenceFields.forEach((field) => {
+            if (typeof saved[field] === 'boolean') $('#' + field).checked = saved[field];
+        });
+    } catch (error) {
+        // La página sigue funcionando aunque el almacenamiento del navegador esté bloqueado.
+    }
+    textFields.forEach((field) => updateFieldDisplay(field));
+
+    function updateFieldDisplay(field) {
+        const value = $('#' + field).value.trim();
+        $('#' + field + 'Text').textContent = value || 'Sin información';
+        if (field === 'username') {
+            $('#sidebarUsername').textContent = value || 'Nombre de usuario';
+            $('#topbarUsername').textContent = value || 'Nombre de usuario';
+        }
+    }
+
+    // Cada lápiz convierte solamente su campo en editable.
+    document.querySelectorAll('[data-edit]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const field = button.dataset.edit;
+            const input = $('#' + field);
+            const isEditing = !input.hidden;
+            if (isEditing) {
+                updateFieldDisplay(field);
+                input.hidden = true;
+                $('#' + field + 'Text').hidden = false;
+                button.textContent = '✎';
+                button.setAttribute('aria-label', 'Editar ' + field);
+                return;
+            }
+            input.hidden = false;
+            $('#' + field + 'Text').hidden = true;
+            input.focus();
+            input.select?.();
+            button.textContent = '✓';
+            button.setAttribute('aria-label', 'Terminar edición');
+            button.title = 'Terminar edición';
+        });
+    });
+
+    // Guardar perfil y privacidad en localStorage para que se conserven en este navegador.
+    $('#saveChanges').addEventListener('click', () => {
+        for (const field of textFields) {
+            const input = $('#' + field);
+            if (field === 'email' && input.value.trim() && !input.checkValidity()) {
+                input.hidden = false;
+                $('#' + field + 'Text').hidden = true;
+                input.focus();
+                showToast('Revisa el formato del correo electrónico.');
+                return;
+            }
+            if (!input.value.trim()) {
+                input.focus();
+                showToast('Completa todos los datos del perfil antes de guardar.');
+                return;
+            }
+        }
+        const data = {};
+        textFields.forEach((field) => {
+            data[field] = $('#' + field).value.trim();
+            $('#' + field).hidden = true;
+            $('#' + field + 'Text').hidden = false;
+            updateFieldDisplay(field);
+            const editButton = document.querySelector('[data-edit="' + field + '"]');
+            editButton.textContent = '✎';
+            editButton.setAttribute('aria-label', 'Editar ' + field);
+            editButton.title = 'Editar';
+        });
+        preferenceFields.forEach((field) => { data[field] = $('#' + field).checked; });
+        try {
+            localStorage.setItem('zaffapp-settings', JSON.stringify(data));
+            showToast('Cambios guardados correctamente.');
+        } catch (error) {
+            showToast('Los cambios están aplicados, pero el navegador no permitió guardarlos permanentemente.');
+        }
+    });
+
+    // Modal de cambio de contraseña.
+    const modal = $('#passwordModal');
+    function openPasswordModal() {
+        modal.hidden = false;
+        $('#currentPassword').focus();
+        $('#passwordError').textContent = '';
+    }
+    function closePasswordModal() {
+        modal.hidden = true;
+        $('#passwordForm').reset();
+        $('#passwordError').textContent = '';
+    }
+    $('#openPassword').addEventListener('click', openPasswordModal);
+    $('#closePassword').addEventListener('click', closePasswordModal);
+    $('#cancelPassword').addEventListener('click', closePasswordModal);
+    modal.addEventListener('click', (event) => { if (event.target === modal) closePasswordModal(); });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.hidden) closePasswordModal();
+        if (event.key === 'Escape') document.body.classList.remove('mobile-menu-open');
+    });
+    $('#passwordForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const current = $('#currentPassword').value;
+        const next = $('#newPassword').value;
+        const confirm = $('#confirmPassword').value;
+        const error = $('#passwordError');
+        if (!current) {
+            error.textContent = 'Introduce tu contraseña actual.';
+        } else if (next.length < 8) {
+            error.textContent = 'La nueva contraseña debe tener al menos 8 caracteres.';
+        } else if (next !== confirm) {
+            error.textContent = 'Las contraseñas nuevas no coinciden.';
+        } else {
+            // Interfaz demostrativa: sin conexión a un servidor no se modifica una contraseña real.
+            closePasswordModal();
+            showToast('Formulario validado. Conecta esta acción a tu backend para actualizar la contraseña.');
+        }
+    });
+})();
+</script>
+</body>
+</html>
