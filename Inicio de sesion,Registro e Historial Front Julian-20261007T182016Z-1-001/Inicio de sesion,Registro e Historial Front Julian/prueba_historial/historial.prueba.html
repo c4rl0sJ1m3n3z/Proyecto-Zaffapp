@@ -1,522 +1,452 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Zaffapp - Historial</title>
-
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Zaffapp - Historial</title>
+  <link rel="stylesheet" href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/estilos.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
-
 <body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">🛡️</div>
+        <span class="brand-name">Zaffapp</span>
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Contraer menú" title="Menú">☰</button>
+      </div>
 
-    <!-- BARRA LATERAL -->
-    <aside class="sidebar">
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link active" href="historial.prueba.html" aria-current="page"><span class="nav-icon">📄</span><span class="nav-label">Historial</span></a>
+        <a class="nav-link" href="../../../front_estadisticas_reportes/estadisticas/estadisticas.html"><span class="nav-icon">📊</span><span class="nav-label">Estadísticas</span></a>
+        <a class="nav-link" href="../../../front_estadisticas_reportes/reportes/reportes.html"><span class="nav-icon">🚩</span><span class="nav-label">Reportes</span></a>
+        <a class="nav-link" href="#mapa" data-unavailable-view="Mapa" aria-disabled="true"><span class="nav-icon">🗺️</span><span class="nav-label">Mapa</span></a>
+        <div class="nav-divider"></div>
+        <a class="nav-link" href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html"><span class="nav-icon">🔔</span><span class="nav-label">Notificaciones</span></a>
+        <a class="nav-link" href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html"><span class="nav-icon">⚙️</span><span class="nav-label">Configuración</span></a>
+      </nav>
 
-        <div class="logo-container">
-            <div class="logo-icon">
-                <img src="logo.png" alt="Logo Zaffapp">
-            </div>
-
-            <span class="logo-text"> Zaffapp</span>
-
-            <button class="menu-btn" type="button" aria-label="Menú">
-                ☰
-            </button>
+      <div class="sidebar-user">
+        <div class="avatar avatar-large" aria-hidden="true"></div>
+        <div class="user-details">
+          <strong id="sidebarUsername">Nombre_de_usuario</strong>
+          <a href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html">Ver perfil &gt;</a>
         </div>
-
-        <nav class="sidebar-nav">
-            <ul>
-                <li class="active">
-                    <a href="#">
-                        <i>📄</i>
-                        <span>Historial</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>📊</i>
-                        <span>Estadísticas</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>🚩</i>
-                        <span>Reportes</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>🗺️</i>
-                        <span>Mapa</span>
-                    </a>
-                </li>
-            </ul>
-
-            <hr class="divider">
-
-            <ul>
-                <li>
-                    <a href="#">
-                        <i>🔔</i>
-                        <span>Notificaciones</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>⚙️</i>
-                        <span>Configuración</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- USUARIO -->
-        <div class="sidebar-user">
-            <div class="user-avatar-large"></div>
-
-            <div class="user-info">
-                <span class="username">Nombre_de_usuario</span>
-                <a href="#" class="view-profile">Ver perfil &gt;</a>
-            </div>
-        </div>
-
+      </div>
     </aside>
 
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="main-content">
-
-        <!-- BARRA SUPERIOR -->
-        <header class="topbar">
-
-            <div class="topbar-left">
-                <button class="icon-btn" type="button" aria-label="Regresar">
-                    ‹
-                </button>
-
-                <button class="icon-btn" type="button" aria-label="Menú">
-                    ☰
-                </button>
-            </div>
-
-            <div class="topbar-right">
-                <button class="icon-btn" type="button" aria-label="Notificaciones">
-                    🔔
-                </button>
-
-                <button class="icon-btn" type="button" aria-label="Configuración">
-                    ⚙️
-                </button>
-
-                <div class="user-profile">
-                    <div class="user-avatar-small"></div>
-                    <span>Nombre de usuario</span>
-                </div>
-            </div>
-
-        </header>
-
-
-        <!-- CONTENIDO DE LA PÁGINA -->
-        <section class="content">
-
-            <div class="page-header">
-                <div>
-                    <h1>Historial</h1>
-
-                    <p>
-                        Consulta los reportes realizados y su estado actual.
-                    </p>
-                </div>
-            </div>
-
-
-            <!-- FILTROS POR ESTADO -->
-            <div class="filters-container" role="group"
-                 aria-label="Filtrar reportes por estado">
-
-                <button
-                    type="button"
-                    class="tab active"
-                    data-filter="todos"
-                    aria-pressed="true"
-                >
-                    Todos
-                    <span class="tab-count" data-count-for="todos">0</span>
-                </button>
-
-                <button
-                    type="button"
-                    class="tab"
-                    data-filter="revision"
-                    aria-pressed="false"
-                >
-                    En revisión
-                    <span class="tab-count" data-count-for="revision">0</span>
-                </button>
-
-                <button
-                    type="button"
-                    class="tab"
-                    data-filter="proceso"
-                    aria-pressed="false"
-                >
-                    En proceso
-                    <span class="tab-count" data-count-for="proceso">0</span>
-                </button>
-
-                <button
-                    type="button"
-                    class="tab"
-                    data-filter="resueltos"
-                    aria-pressed="false"
-                >
-                    Resueltos
-                    <span class="tab-count" data-count-for="resueltos">0</span>
-                </button>
-
-            </div>
-
-
-            <!-- TABLA DE REPORTES -->
-            <div class="data-table-container">
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Reporte</th>
-                            <th>Ubicación</th>
-                            <th>Fecha</th>
-                            <th>Prioridad</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-
-                    <tbody id="reports-table">
-
-                        <!-- REPORTE 1: EN REVISIÓN -->
-                        <tr class="report-row" data-status="revision">
-
-                            <td>
-                                <div class="report-info">
-                                    <div class="report-img">
-                                        <i class="fas fa-road"></i>
-                                    </div>
-
-                                    <div class="report-text">
-                                        <strong>Vía en mal estado</strong>
-                                        <span>• Infraestructura</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="location-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-
-                                    <div class="location-text">
-                                        Calle 26 con Carrera 9
-                                        <span>Soacha</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>22 de mayo de 2026</td>
-
-                            <td>
-                                <span class="priority-dot priority-high"></span>
-                                Alta
-                            </td>
-
-                            <td>
-                                <span class="status-badge status-review">
-                                    En revisión
-                                </span>
-                            </td>
-
-                        </tr>
-
-
-                        <!-- REPORTE 2: EN PROCESO -->
-                        <tr class="report-row" data-status="proceso">
-
-                            <td>
-                                <div class="report-info">
-                                    <div class="report-img">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-
-                                    <div class="report-text">
-                                        <strong>Manifestaciones</strong>
-                                        <span>• Orden público</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="location-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-
-                                    <div class="location-text">
-                                        Carrera 7 con Calle 15
-                                        <span>Parque Central</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>21 de mayo de 2026</td>
-
-                            <td>
-                                <span class="priority-dot priority-medium"></span>
-                                Media
-                            </td>
-
-                            <td>
-                                <span class="status-badge status-process">
-                                    En proceso
-                                </span>
-                            </td>
-
-                        </tr>
-
-
-                        <!-- REPORTE 3: RESUELTO -->
-                        <tr class="report-row" data-status="resueltos">
-
-                            <td>
-                                <div class="report-info">
-                                    <div class="report-img">
-                                        <i class="fas fa-lightbulb"></i>
-                                    </div>
-
-                                    <div class="report-text">
-                                        <strong>Alumbrado dañado</strong>
-                                        <span>• Servicios públicos</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="location-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-
-                                    <div class="location-text">
-                                        Calle 13 con Carrera 8
-                                        <span>Centro de Soacha</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>20 de mayo de 2026</td>
-
-                            <td>
-                                <span class="priority-dot priority-medium"></span>
-                                Media
-                            </td>
-
-                            <td>
-                                <span class="status-badge status-resolved">
-                                    Resuelto
-                                </span>
-                            </td>
-
-                        </tr>
-
-
-                        <!-- REPORTE 4: EN REVISIÓN -->
-                        <tr class="report-row" data-status="revision">
-
-                            <td>
-                                <div class="report-info">
-                                    <div class="report-img">
-                                        <i class="fas fa-shield-alt"></i>
-                                    </div>
-
-                                    <div class="report-text">
-                                        <strong>Actividad sospechosa</strong>
-                                        <span>• Seguridad ciudadana</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="location-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-
-                                    <div class="location-text">
-                                        Avenida Indumil
-                                        <span>Soacha</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>19 de mayo de 2026</td>
-
-                            <td>
-                                <span class="priority-dot priority-high"></span>
-                                Alta
-                            </td>
-
-                            <td>
-                                <span class="status-badge status-review">
-                                    En revisión
-                                </span>
-                            </td>
-
-                        </tr>
-
-
-                        <!-- REPORTE 5: EN PROCESO -->
-                        <tr class="report-row" data-status="proceso">
-
-                            <td>
-                                <div class="report-info">
-                                    <div class="report-img">
-                                        <i class="fas fa-car-crash"></i>
-                                    </div>
-
-                                    <div class="report-text">
-                                        <strong>Accidente de tránsito</strong>
-                                        <span>• Movilidad</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="location-info">
-                                    <i class="fas fa-map-marker-alt"></i>
-
-                                    <div class="location-text">
-                                        Autopista Sur
-                                        <span>Soacha</span>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>18 de mayo de 2026</td>
-
-                            <td>
-                                <span class="priority-dot priority-high"></span>
-                                Alta
-                            </td>
-
-                            <td>
-                                <span class="status-badge status-process">
-                                    En proceso
-                                </span>
-                            </td>
-
-                        </tr>
-
-
-                        <!-- MENSAJE CUANDO NO HAY RESULTADOS -->
-                        <tr id="empty-state" hidden>
-                            <td colspan="5" class="empty-message">
-                                <i class="fas fa-folder-open"></i>
-                                <p>No hay reportes en esta categoría.</p>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-            </div>
-
+    <div class="main-shell">
+      <header class="topbar">
+        <div class="topbar-left">
+          <a class="topbar-icon back-button" href="../../../front_estadisticas_reportes/reportes/reportes.html" aria-label="Volver a reportes" title="Volver a reportes">‹</a>
+          <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
+        </div>
+        <div class="topbar-right">
+          <a class="top-action" href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Notificaciones/notificaciones.html" aria-label="Notificaciones" title="Notificaciones">🔔</a>
+          <a class="top-action" href="../../../ZaffApp%20-%20Configuracion%20y%20Notificaciones%20Wendy-20261009T212642Z-1-001/Configuracion/Configuracion_ZaffApp/configuracion.html" aria-label="Configuración" title="Configuración">⚙️</a>
+          <div class="avatar avatar-small" aria-hidden="true"></div>
+          <span class="topbar-username" id="topbarUsername">Nombre_de_usuario</span>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="page-heading" aria-labelledby="pageTitle">
+          <div>
+            <h1 id="pageTitle">Historial</h1>
+            <p>Consulta los reportes realizados y su estado actual.</p>
+          </div>
+          <a class="primary-button" href="../../../front_estadisticas_reportes/reportes/reportes.html"><span aria-hidden="true">＋</span> Crear reporte</a>
         </section>
 
-    </main>
+        <section class="stats-grid" aria-label="Resumen de mis reportes">
+          <article class="stat-card"><span class="stat-label">Total de reportes</span><strong class="stat-number" id="totalReports">0</strong><small class="stat-note">Reportes registrados</small></article>
+          <article class="stat-card"><span class="stat-label">Recibidos</span><strong class="stat-number" id="receivedReports">0</strong><small class="stat-note stat-note-alert">Pendientes de revisión</small></article>
+          <article class="stat-card"><span class="stat-label">En atención</span><strong class="stat-number" id="activeReports">0</strong><small class="stat-note">En revisión o proceso</small></article>
+          <article class="stat-card"><span class="stat-label">Resueltos</span><strong class="stat-number" id="resolvedReports">0</strong><small class="stat-note stat-note-good">Casos atendidos</small></article>
+        </section>
 
+        <section class="history-toolbar" aria-label="Buscar y filtrar reportes">
+          <div class="tabs" role="tablist" aria-label="Filtrar reportes por estado">
+            <button class="tab-button active" type="button" role="tab" aria-selected="true" data-view="all">Todos <span class="tab-count" id="count-all">0</span></button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" data-view="received">Recibidos <span class="tab-count" id="count-received">0</span></button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" data-view="review">En revisión <span class="tab-count" id="count-review">0</span></button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" data-view="process">En proceso <span class="tab-count" id="count-process">0</span></button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" data-view="resolved">Resueltos <span class="tab-count" id="count-resolved">0</span></button>
+          </div>
+          <label class="search-box" for="historySearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="historySearch" type="search" placeholder="Buscar reportes..." autocomplete="off">
+          </label>
+          <label class="toolbar-select" for="categoryFilter">
+            <span class="sr-only">Filtrar por categoría</span>
+            <select id="categoryFilter">
+              <option value="all">Categoría: Todas</option>
+              <option value="Seguridad ciudadana">Seguridad ciudadana</option>
+              <option value="Seguridad">Seguridad</option>
+              <option value="Orden público">Orden público</option>
+              <option value="Infraestructura">Infraestructura</option>
+              <option value="Vía pública">Vía pública</option>
+              <option value="Movilidad">Movilidad</option>
+              <option value="Alumbrado">Alumbrado</option>
+              <option value="Servicios públicos">Servicios públicos</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </label>
+          <label class="date-control" for="dateFrom" title="Fecha inicial">
+            <span aria-hidden="true">▦</span>
+            <input id="dateFrom" type="date" aria-label="Fecha inicial">
+          </label>
+          <label class="date-control" for="dateTo" title="Fecha final">
+            <span aria-hidden="true">▦</span>
+            <input id="dateTo" type="date" aria-label="Fecha final">
+          </label>
+          <button class="clear-filters" id="clearFilters" type="button">Limpiar filtros <span aria-hidden="true">×</span></button>
+        </section>
 
-    <!-- FUNCIONALIDAD DE LAS PESTAÑAS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        <section class="table-card" aria-label="Listado del historial de reportes">
+          <div class="table-scroll">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Reporte</th>
+                  <th scope="col">Ubicación</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Prioridad</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col"><span class="sr-only">Acciones</span></th>
+                </tr>
+              </thead>
+              <tbody id="historyRows"></tbody>
+            </table>
+          </div>
+          <div class="empty-state" id="emptyState" hidden>
+            <span class="empty-icon" aria-hidden="true">📄</span>
+            <strong>No hay reportes para mostrar</strong>
+            <p>Prueba con otros filtros o crea un nuevo reporte.</p>
+          </div>
+          <footer class="table-footer">
+            <span class="results-count" id="resultsCount" aria-live="polite">Mostrando 0 reportes</span>
+            <nav class="pagination" id="pagination" aria-label="Paginación del historial"></nav>
+          </footer>
+        </section>
+        <p class="privacy-note"><span aria-hidden="true">🔒</span> El historial combina reportes de demostración con los creados en este navegador.</p>
+      </main>
+    </div>
+  </div>
 
-            const tabs = document.querySelectorAll(".tab");
-            const reports = document.querySelectorAll(".report-row");
-            const emptyState = document.getElementById("empty-state");
+  <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú" tabindex="-1"></button>
+  <div class="modal-backdrop" id="detailModal" hidden>
+    <section class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+      <button class="modal-close" id="closeDetail" type="button" aria-label="Cerrar">×</button>
+      <div class="modal-heading-icon" aria-hidden="true">📋</div>
+      <p class="detail-category" id="detailCategory"></p>
+      <h2 id="detailTitle">Detalle del reporte</h2>
+      <div class="detail-status" id="detailStatus"></div>
+      <p class="detail-description" id="detailDescription"></p>
+      <dl class="detail-meta">
+        <div><dt>Ubicación</dt><dd id="detailLocation"></dd></div>
+        <div><dt>Fecha</dt><dd id="detailDate"></dd></div>
+        <div><dt>Prioridad</dt><dd id="detailPriority"></dd></div>
+      </dl>
+      <div class="modal-actions"><button class="secondary-button" id="closeDetailButton" type="button">Cerrar</button></div>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-            const countElements = document.querySelectorAll("[data-count-for]");
+  <script>
+    (() => {
+      const demoReports = [
+        { id: 'h1', title: 'Vía en mal estado', category: 'Infraestructura', date: '2026-05-22', location: 'Calle 26 con Carrera 9, Soacha', priority: 'Alta', status: 'En revisión', description: 'Se reportó un tramo de vía en mal estado que dificulta el tránsito y puede causar daños a los vehículos.' },
+        { id: 'h2', title: 'Manifestaciones', category: 'Orden público', date: '2026-05-21', location: 'Carrera 7 con Calle 15, Parque Central', priority: 'Media', status: 'En proceso', description: 'Se reportó una manifestación en el sector para mantener informada a la comunidad.' },
+        { id: 'h3', title: 'Alumbrado dañado', category: 'Servicios públicos', date: '2026-05-20', location: 'Calle 13 con Carrera 8, Centro de Soacha', priority: 'Media', status: 'Resuelto', description: 'Una luminaria del sector dejó de funcionar. El caso fue atendido.' },
+        { id: 'h4', title: 'Actividad sospechosa', category: 'Seguridad ciudadana', date: '2026-05-19', location: 'Avenida Indumil, Soacha', priority: 'Alta', status: 'En revisión', description: 'Se reportó actividad sospechosa en el sector para que las autoridades puedan revisarla.' },
+        { id: 'h5', title: 'Accidente de tránsito', category: 'Movilidad', date: '2026-05-18', location: 'Autopista Sur, Soacha', priority: 'Alta', status: 'En proceso', description: 'Se reportó un accidente de tránsito en la Autopista Sur.' }
+      ];
+      const validCategories = new Set(['Seguridad', 'Vía pública', 'Alumbrado', 'Otro']);
+      const PAGE_SIZE = 7;
+      const $ = (selector) => document.querySelector(selector);
+      let reports = [...demoReports];
+      let currentView = 'all';
+      let currentPage = 1;
+      let lastFocusedElement;
 
-            // Actualiza los contadores de las pestañas.
-            function updateCounts() {
+      function showToast(message) {
+        const toast = $('#toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        window.clearTimeout(showToast.timer);
+        showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 2800);
+      }
 
-                const counts = {
-                    todos: reports.length,
-                    revision: 0,
-                    proceso: 0,
-                    resueltos: 0
-                };
+      function loadSavedReports() {
+        try {
+          const saved = JSON.parse(localStorage.getItem('zaffapp-reports') || '{}');
+          if (!Array.isArray(saved.created)) return;
+          const created = saved.created.filter((report) =>
+            report && Number.isSafeInteger(report.id) &&
+            validCategories.has(report.category) &&
+            typeof report.title === 'string' &&
+            typeof report.location === 'string' &&
+            typeof report.description === 'string' &&
+            /^\d{4}-\d{2}-\d{2}$/.test(report.date) &&
+            !Number.isNaN(Date.parse(`${report.date}T12:00:00`))
+          ).map((report) => ({
+            ...report,
+            priority: report.priority || 'Media',
+            status: report.status === 'En revisión' || report.status === 'En proceso' || report.status === 'Resuelto'
+              ? report.status
+              : 'Recibido'
+          }));
+          reports = [...created, ...demoReports].sort((a, b) => b.date.localeCompare(a.date));
+        } catch (error) {
+          showToast('No se pudieron cargar los reportes guardados en este navegador.');
+        }
+      }
 
-                reports.forEach(function (report) {
-                    const status = report.dataset.status;
+      function statusKey(status) {
+        if (status === 'Recibido') return 'received';
+        if (status === 'En revisión') return 'review';
+        if (status === 'En proceso') return 'process';
+        return 'resolved';
+      }
 
-                    if (Object.prototype.hasOwnProperty.call(counts, status)) {
-                        counts[status]++;
-                    }
-                });
-
-                countElements.forEach(function (element) {
-                    const filter = element.dataset.countFor;
-                    element.textContent = counts[filter] ?? 0;
-                });
-            }
-
-            // Muestra únicamente los reportes de la categoría seleccionada.
-            function filterReports(filter) {
-
-                let visibleReports = 0;
-
-                reports.forEach(function (report) {
-
-                    const matches =
-                        filter === "todos" ||
-                        report.dataset.status === filter;
-
-                    report.hidden = !matches;
-
-                    if (matches) {
-                        visibleReports++;
-                    }
-                });
-
-                // Actualiza el estado visual de las pestañas.
-                tabs.forEach(function (tab) {
-
-                    const isActive = tab.dataset.filter === filter;
-
-                    tab.classList.toggle("active", isActive);
-                    tab.setAttribute("aria-pressed", String(isActive));
-                });
-
-                // Muestra un mensaje si la categoría está vacía.
-                emptyState.hidden = visibleReports !== 0;
-            }
-
-            // Escucha los clics en las pestañas.
-            tabs.forEach(function (tab) {
-
-                tab.addEventListener("click", function () {
-                    filterReports(tab.dataset.filter);
-                });
-
-            });
-
-            updateCounts();
-            filterReports("todos");
-
+      function filteredReports() {
+        const query = $('#historySearch').value.trim().toLocaleLowerCase('es');
+        const category = $('#categoryFilter').value;
+        const from = $('#dateFrom').value;
+        const to = $('#dateTo').value;
+        return reports.filter((report) => {
+          const matchesView = currentView === 'all' || statusKey(report.status) === currentView;
+          const matchesCategory = category === 'all' || report.category === category;
+          const matchesFrom = !from || report.date >= from;
+          const matchesTo = !to || report.date <= to;
+          const matchesQuery = !query ||
+            `${report.title} ${report.category} ${report.location} ${report.status}`.toLocaleLowerCase('es').includes(query);
+          return matchesView && matchesCategory && matchesFrom && matchesTo && matchesQuery;
         });
-    </script>
+      }
 
+      function renderCounts() {
+        const counts = {
+          all: reports.length,
+          received: reports.filter((report) => report.status === 'Recibido').length,
+          review: reports.filter((report) => report.status === 'En revisión').length,
+          process: reports.filter((report) => report.status === 'En proceso').length,
+          resolved: reports.filter((report) => report.status === 'Resuelto').length
+        };
+        $('#totalReports').textContent = counts.all;
+        $('#receivedReports').textContent = counts.received;
+        $('#activeReports').textContent = counts.review + counts.process;
+        $('#resolvedReports').textContent = counts.resolved;
+        Object.entries(counts).forEach(([key, value]) => {
+          const count = $(`#count-${key}`);
+          if (count) count.textContent = value;
+        });
+      }
+
+      function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, (character) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        })[character]);
+      }
+
+      function formatDate(date) {
+        return new Intl.DateTimeFormat('es-CO', { day: '2-digit', month: 'short', year: 'numeric' })
+          .format(new Date(`${date}T12:00:00`));
+      }
+
+      function statusClass(status) {
+        if (status === 'Resuelto') return 'status-resolved';
+        if (status === 'En proceso') return 'status-process';
+        if (status === 'Recibido') return 'status-received';
+        return 'status-review';
+      }
+
+      function priorityClass(priority) {
+        return priority === 'Alta' ? 'priority-high' : priority === 'Baja' ? 'priority-low' : 'priority-medium';
+      }
+
+      function renderPagination(totalPages) {
+        const pagination = $('#pagination');
+        pagination.replaceChildren();
+        if (totalPages <= 1) return;
+        const buttons = [{ label: '‹', page: currentPage - 1, title: 'Página anterior', disabled: currentPage === 1 }];
+        for (let page = 1; page <= totalPages; page++) {
+          buttons.push({ label: String(page), page, title: `Página ${page}`, active: currentPage === page });
+        }
+        buttons.push({ label: '›', page: currentPage + 1, title: 'Página siguiente', disabled: currentPage === totalPages });
+        buttons.forEach((item) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = `page-button${item.active ? ' active' : ''}`;
+          button.textContent = item.label;
+          button.title = item.title;
+          button.setAttribute('aria-label', item.title);
+          if (item.active) button.setAttribute('aria-current', 'page');
+          button.disabled = Boolean(item.disabled);
+          button.addEventListener('click', () => {
+            currentPage = item.page;
+            renderReports();
+          });
+          pagination.appendChild(button);
+        });
+      }
+
+      function renderReports() {
+        const filtered = filteredReports();
+        const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+        currentPage = Math.min(currentPage, totalPages);
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const pageReports = filtered.slice(start, start + PAGE_SIZE);
+        const rows = $('#historyRows');
+        rows.replaceChildren();
+        pageReports.forEach((report) => {
+          const row = document.createElement('tr');
+          row.className = 'history-row';
+          row.innerHTML = `
+            <td class="report-cell">
+              <div class="report-info">
+                <span class="report-img" aria-hidden="true">${iconFor(report.category)}</span>
+                <span class="report-text"><strong>${escapeHTML(report.title)}</strong><span>${escapeHTML(report.category)}</span></span>
+              </div>
+            </td>
+            <td><span class="location-text">${escapeHTML(report.location)}</span></td>
+            <td class="date-cell"><time datetime="${report.date}">${formatDate(report.date)}</time></td>
+            <td class="priority-cell"><span class="priority-dot ${priorityClass(report.priority)}" aria-hidden="true"></span>${escapeHTML(report.priority)}</td>
+            <td><span class="report-status ${statusClass(report.status)}">${escapeHTML(report.status)}</span></td>
+            <td class="action-cell"><button class="view-report" type="button" data-detail-id="${escapeHTML(report.id)}" aria-label="Ver reporte: ${escapeHTML(report.title)}">Ver</button></td>
+          `;
+          rows.appendChild(row);
+        });
+        const hasResults = filtered.length > 0;
+        $('#emptyState').hidden = hasResults;
+        $('.history-table').hidden = !hasResults;
+        $('#resultsCount').textContent = hasResults
+          ? `Mostrando ${start + 1} a ${Math.min(start + PAGE_SIZE, filtered.length)} de ${filtered.length} reportes`
+          : 'Mostrando 0 reportes';
+        renderPagination(totalPages);
+        renderCounts();
+      }
+
+      function iconFor(category) {
+        if (category.toLocaleLowerCase('es').includes('vía') || category === 'Infraestructura') return '🛣️';
+        if (category.includes('Alumbrado') || category.includes('Servicios')) return '💡';
+        if (category.includes('Movilidad')) return '🚗';
+        if (category.includes('Seguridad') || category.includes('Orden')) return '🛡️';
+        return '📋';
+      }
+
+      function selectView(view) {
+        currentView = view;
+        document.querySelectorAll('.tab-button').forEach((tab) => {
+          const active = tab.dataset.view === view;
+          tab.classList.toggle('active', active);
+          tab.setAttribute('aria-selected', String(active));
+        });
+      }
+
+      function openDetail(reportId, trigger) {
+        const report = reports.find((item) => String(item.id) === String(reportId));
+        if (!report) return;
+        lastFocusedElement = trigger;
+        $('#detailCategory').textContent = report.category;
+        $('#detailTitle').textContent = report.title;
+        $('#detailStatus').innerHTML = `<span class="report-status ${statusClass(report.status)}">${escapeHTML(report.status)}</span>`;
+        $('#detailDescription').textContent = report.description || 'No se agregó una descripción para este reporte.';
+        $('#detailLocation').textContent = report.location;
+        $('#detailDate').textContent = formatDate(report.date);
+        $('#detailPriority').textContent = report.priority || 'Media';
+        $('#detailModal').hidden = false;
+        document.body.classList.add('modal-open');
+        $('#closeDetail').focus();
+      }
+
+      function closeDetail() {
+        $('#detailModal').hidden = true;
+        document.body.classList.remove('modal-open');
+        lastFocusedElement?.focus();
+      }
+
+      function toggleSidebar() {
+        if (window.matchMedia('(max-width: 640px)').matches) {
+          document.body.classList.toggle('mobile-menu-open');
+        } else {
+          document.body.classList.toggle('sidebar-collapsed');
+        }
+      }
+
+      try {
+        const settings = JSON.parse(localStorage.getItem('zaffapp-settings') || '{}');
+        if (typeof settings.username === 'string' && settings.username.trim()) {
+          $('#sidebarUsername').textContent = settings.username.trim();
+          $('#topbarUsername').textContent = settings.username.trim();
+        }
+      } catch (error) {
+        showToast('No se pudo cargar el perfil guardado.');
+      }
+      loadSavedReports();
+      $('#sidebarToggle').addEventListener('click', toggleSidebar);
+      $('#topbarMenuToggle').addEventListener('click', toggleSidebar);
+      $('#sidebarBackdrop').addEventListener('click', () => document.body.classList.remove('mobile-menu-open'));
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 640px)').matches) document.body.classList.remove('mobile-menu-open');
+      });
+      document.querySelectorAll('[data-unavailable-view]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          showToast(`La vista de ${link.dataset.unavailableView} aún no está disponible.`);
+        });
+      });
+      document.querySelectorAll('.tab-button').forEach((tab) => tab.addEventListener('click', () => {
+        selectView(tab.dataset.view);
+        currentPage = 1;
+        renderReports();
+      }));
+      $('#historySearch').addEventListener('input', () => { currentPage = 1; renderReports(); });
+      $('#categoryFilter').addEventListener('change', () => { currentPage = 1; renderReports(); });
+      [$('#dateFrom'), $('#dateTo')].forEach((input) => input.addEventListener('change', () => {
+        currentPage = 1;
+        renderReports();
+      }));
+      $('#clearFilters').addEventListener('click', () => {
+        $('#historySearch').value = '';
+        $('#categoryFilter').value = 'all';
+        $('#dateFrom').value = '';
+        $('#dateTo').value = '';
+        selectView('all');
+        currentPage = 1;
+        renderReports();
+      });
+      $('#historyRows').addEventListener('click', (event) => {
+        const button = event.target.closest('[data-detail-id]');
+        if (button) openDetail(button.dataset.detailId, button);
+      });
+      $('#closeDetail').addEventListener('click', closeDetail);
+      $('#closeDetailButton').addEventListener('click', closeDetail);
+      $('#detailModal').addEventListener('click', (event) => {
+        if (event.target === $('#detailModal')) closeDetail();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          if (!$('#detailModal').hidden) closeDetail();
+          document.body.classList.remove('mobile-menu-open');
+        }
+        if (event.key === 'Tab' && !$('#detailModal').hidden) {
+          const focusable = [...$('#detailModal').querySelectorAll('button:not([disabled])')];
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+      renderReports();
+    })();
+  </script>
 </body>
 </html>

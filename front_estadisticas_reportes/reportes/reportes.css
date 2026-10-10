@@ -1,0 +1,97 @@
+.report-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; width: 100%; margin-bottom: 15px; }
+.reports-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.reports-table th {
+  height: 38px;
+  border-bottom: 1px solid var(--line);
+  background: #fafafd;
+  color: #292d38;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: left;
+}
+.reports-table th:first-child { width: 34%; padding-left: 15px; }
+.reports-table th:nth-child(2) { width: 16%; }
+.reports-table th:nth-child(3) { width: 17%; }
+.reports-table th:nth-child(4) { width: 19%; }
+.reports-table th:last-child { width: 14%; }
+.reports-table th:not(:first-child) { padding-left: 12px; }
+.reports-table td { height: 51px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 11px; vertical-align: middle; overflow-wrap: anywhere; }
+.report-row:hover { background: #fbf9ff; }
+.report-title-cell { padding-left: 15px !important; }
+.report-title { display: block; max-width: 100%; padding: 0; border: 0; background: transparent; color: #30303f; font-size: 11px; font-weight: 700; line-height: 1.3; text-align: left; }
+.report-title:hover { color: var(--primary); text-decoration: underline; }
+.report-location { display: block; max-width: 100%; margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.25; }
+.report-status { display: inline-flex; align-items: center; min-height: 21px; padding: 3px 8px; border-radius: 12px; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.status-received { background: #fff3d9; color: #9a6405; }
+.status-review { background: #e5f1ff; color: #286cae; }
+.status-resolved { background: #e0f5e9; color: #23784d; }
+.report-actions { text-align: right; }
+.view-report { padding: 5px 10px; border: 1px solid #d9d0ee; border-radius: 14px; background: #fff; color: var(--primary); font-size: 10px; }
+.view-report:hover { border-color: var(--primary); background: var(--primary-soft); }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 18px; background: #17152966; }
+.modal-backdrop[hidden] { display: none; }
+.report-modal { position: relative; width: min(100%, 480px); max-height: min(90vh, 760px); overflow-y: auto; padding: 24px; border-radius: 12px; background: #fff; box-shadow: 0 18px 55px #1a163333; }
+.modal-close { position: absolute; top: 9px; right: 13px; padding: 0; border: 0; background: transparent; color: #777; font-size: 25px; }
+.modal-heading-icon { margin-bottom: 8px; font-size: 23px; }
+.report-modal h2 { margin: 0 0 6px; color: var(--primary); font-size: 20px; }
+.report-modal > p:not(.detail-eyebrow):not(.detail-description) { margin: 0 0 17px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.report-modal form { display: flex; flex-direction: column; gap: 7px; }
+.report-modal form label { margin-top: 5px; color: #353844; font-size: 11px; font-weight: 700; }
+.report-modal form input, .report-modal form select, .report-modal form textarea {
+  width: 100%;
+  min-height: 36px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+}
+.report-modal form textarea { min-height: 95px; resize: vertical; }
+.report-modal form input:focus, .report-modal form select:focus, .report-modal form textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 2px #5c3fbd20; }
+.character-count { align-self: flex-end; margin-top: -4px; color: var(--muted); font-size: 10px; }
+.form-error { min-height: 14px; margin: 0; color: #c0394e; font-size: 11px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.secondary-button { display: inline-flex; align-items: center; justify-content: center; min-height: 29px; padding: 0 13px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: #343744; font-size: 10px; white-space: nowrap; }
+.secondary-button:hover { background: #f8f6ff; border-color: #c9bdec; }
+body.modal-open { overflow: hidden; }
+.detail-modal { width: min(100%, 440px); }
+.detail-eyebrow { margin: 0 0 5px; color: var(--purple); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+.detail-modal h2 { margin-bottom: 10px; padding-right: 15px; line-height: 1.3; }
+.detail-status { margin: 0 0 15px; }
+.detail-description { margin: 0 0 17px; color: #4e5160; font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.detail-meta { margin: 0; border-top: 1px solid var(--line); }
+.detail-meta div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.detail-meta dt { color: var(--muted); font-size: 10px; font-weight: 700; }
+.detail-meta dd { margin: 0; color: var(--text); font-size: 11px; overflow-wrap: anywhere; }
+
+@media (max-width: 1100px) {
+  .report-toolbar { gap: 8px; }
+  .search-box { flex: 1 1 190px; }
+  .toolbar-select, .date-control { flex: 1 1 135px; }
+}
+@media (max-width: 960px) {
+  .report-toolbar .tabs { flex: 1 1 100%; width: fit-content; }
+}
+@media (max-width: 640px) {
+  .report-toolbar .tabs { max-width: 100%; }
+  .report-toolbar .tab-button { padding: 0 7px; font-size: 10px; }
+  .report-toolbar .search-box, .report-toolbar .toolbar-select, .report-toolbar .date-control { flex: 1 1 calc(50% - 8px); width: auto; }
+  .reports-table { min-width: 690px; }
+  .heading-actions { align-items: flex-end; flex-direction: column-reverse; gap: 6px; }
+  .heading-actions .primary-button { padding: 0 12px; }
+  .save-status { max-width: 150px; text-align: right; line-height: 1.3; }
+  .sidebar-backdrop { position: fixed; inset: 0; z-index: 15; display: none; width: 100%; height: 100%; border: 0; background: #17152966; }
+  body.mobile-menu-open .sidebar-backdrop { display: block; }
+}
+@media (max-width: 430px) {
+  .report-toolbar .tabs { flex-basis: 100%; justify-content: space-between; }
+  .report-toolbar .tab-button { padding: 0 5px; font-size: 9px; }
+  .report-toolbar .search-box, .report-toolbar .toolbar-select, .report-toolbar .date-control { flex-basis: 100%; }
+  .heading-actions { width: 100%; align-items: center; flex-direction: row-reverse; justify-content: space-between; }
+  .save-status { text-align: left; }
+  .report-modal { padding: 21px 17px; }
+  .detail-meta div { grid-template-columns: 105px minmax(0, 1fr); }
+}

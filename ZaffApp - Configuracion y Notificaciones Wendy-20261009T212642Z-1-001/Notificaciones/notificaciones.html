@@ -3,188 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
   <title>Zaffapp - Notificaciones</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
   <div class="app-container">
-    <!-- Barra lateral: conserva la estructura de la página Reportes -->
-     <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">🛡️</div>
+        <span class="brand-name">Zaffapp</span>
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Contraer menú" title="Menú">☰</button>
+      </div>
 
-        <div class="logo-container">
+      <nav class="navigation" aria-label="Navegación principal">
+        <a class="nav-link" href="../../Inicio de sesion,Registro e Historial Front Julian-20261007T182016Z-1-001/Inicio de sesion,Registro e Historial Front Julian/prueba_historial/historial.prueba.html"><span class="nav-icon">📄</span><span class="nav-label">Historial</span></a>
+        <a class="nav-link" href="../../front_estadisticas_reportes/estadisticas/estadisticas.html"><span class="nav-icon">📊</span><span class="nav-label">Estadísticas</span></a>
+        <a class="nav-link" href="#reportes" data-unavailable-view="Reportes" aria-disabled="true"><span class="nav-icon">🚩</span><span class="nav-label">Reportes</span></a>
+        <a class="nav-link" href="#mapa" data-unavailable-view="Mapa" aria-disabled="true"><span class="nav-icon">🗺️</span><span class="nav-label">Mapa</span></a>
+        <div class="nav-divider"></div>
+        <a class="nav-link active" href="notificaciones.html" aria-current="page"><span class="nav-icon">🔔</span><span class="nav-label">Notificaciones</span></a>
+        <a class="nav-link" href="../Configuracion/Configuracion_ZaffApp/configuracion.html"><span class="nav-icon">⚙️</span><span class="nav-label">Configuración</span></a>
+      </nav>
 
-            <div class="logo-icon">
-                <img src="logo.png" alt="Logo Zaffapp">
-            </div>
-
-            <span class="logo-text"> Zaffapp</span>
-
-            <button class="menu-btn" type="button" aria-label="Menú">
-                ☰
-            </button>
-
+      <div class="sidebar-user">
+        <div class="avatar avatar-large" aria-hidden="true"></div>
+        <div class="user-details">
+          <strong id="sidebarUsername">Nombre_de_usuario</strong>
+          <a href="../Configuracion/Configuracion_ZaffApp/configuracion.html">Ver perfil &gt;</a>
         </div>
-
-        <nav class="sidebar-nav">
-
-            <ul>
-                <li>
-                    <a href="#">
-                        <i>📄</i>
-                        <span>Historial</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>📊</i>
-                        <span>Estadísticas</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>🚩</i>
-                        <span>Reportes</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i>🗺️</i>
-                        <span>Mapa</span>
-                    </a>
-                </li>
-            </ul>
-
-            <hr class="divider">
-
-            <ul>
-              <li class="active">
-                    <a href="#">
-                        <i>🔔</i>
-                        <span>Notificaciones</span>
-                    </a>
-              </li>
-
-                <li>
-                    <a href="#">
-                        <i>⚙️</i>
-                        <span>Configuración</span>
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-
-        <!-- INFORMACIÓN DEL USUARIO -->
-        <div class="sidebar-user">
-
-            <div class="user-avatar-large"></div>
-
-            <div class="user-info">
-                <span class="username">Nombre_de_usuario</span>
-                <a href="#" class="view-profile">Ver perfil &gt;</a>
-            </div>
-
-        </div>
-
+      </div>
     </aside>
 
     <div class="main-shell">
-      <!-- Encabezado superior de Reportes -->
       <header class="topbar">
+        <div class="topbar-left">
+          <a class="topbar-icon back-button" href="../../Inicio de sesion,Registro e Historial Front Julian-20261007T182016Z-1-001/Inicio de sesion,Registro e Historial Front Julian/prueba_historial/historial.prueba.html" aria-label="Volver al historial" title="Volver al historial">‹</a>
+          <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
+        </div>
+        <div class="topbar-right">
+          <a class="top-action" href="notificaciones.html" aria-label="Notificaciones" title="Notificaciones" aria-current="page">🔔</a>
+          <a class="top-action" href="../Configuracion/Configuracion_ZaffApp/configuracion.html" aria-label="Configuración" title="Configuración">⚙️</a>
+          <div class="avatar avatar-small" aria-hidden="true"></div>
+          <span class="topbar-username" id="topbarUsername">Nombre_de_usuario</span>
+        </div>
+      </header>
 
-            <div class="topbar-left">
-
-                <button class="icon-btn" type="button" aria-label="Regresar">
-                    ‹
-                </button>
-
-                <button class="icon-btn" type="button" aria-label="Menú">
-                    ☰
-                </button>
-
-            </div>
-
-            <div class="topbar-right">
-
-                <button class="icon-btn" type="button"
-                        aria-label="Notificaciones">
-                    🔔
-                </button>
-
-                <button class="icon-btn" type="button"
-                        aria-label="Configuración">
-                    ⚙️
-                </button>
-
-                <div class="user-profile">
-                    <div class="user-avatar-small"></div>
-                    <span>Nombre de usuario</span>
-                </div>
-
-            </div>
-
-        </header>
-
-
-      <main class="main-content" id="notificaciones">
-        <section class="page-heading">
-            <div class="page-header">
-                <div>
-                    <h1>Notificaciones</h1>
-
-                    <p>
-                        Mantente al tanto de las actualizaciones y eventos importantes.
-                    </p>
-                </div>
-            </div>
-
-          <button class="btn-primary" id="markAllRead" type="button">Marcar todas como leídas</button>
+      <main class="page-content">
+        <section class="page-heading" aria-labelledby="pageTitle">
+          <div>
+            <h1 id="pageTitle">Notificaciones</h1>
+            <p>Mantente al tanto de las actualizaciones y eventos importantes.</p>
+          </div>
+          <div class="heading-actions">
+            <span class="save-status" id="notificationStatus" role="status" aria-live="polite">Notificaciones actualizadas</span>
+            <button class="primary-button" id="markAllRead" type="button">Marcar todas como leídas</button>
+          </div>
         </section>
 
         <section class="stats-grid" aria-label="Resumen de notificaciones">
           <article class="stat-card">
             <span class="stat-label">Total de notificaciones</span>
-            <strong class="stat-number" id="totalNotifications">12</strong>
+            <strong class="stat-number" id="totalNotifications">0</strong>
             <small class="stat-note">Notificaciones registradas</small>
           </article>
           <article class="stat-card">
             <span class="stat-label">No leídas</span>
-            <strong class="stat-number" id="unreadNotifications">3</strong>
+            <strong class="stat-number" id="unreadNotifications">0</strong>
             <small class="stat-note stat-note-alert">Pendientes de revisar</small>
           </article>
           <article class="stat-card">
             <span class="stat-label">Leídas</span>
-            <strong class="stat-number" id="readNotifications">9</strong>
+            <strong class="stat-number" id="readNotifications">0</strong>
             <small class="stat-note stat-note-good">Ya consultadas</small>
           </article>
           <article class="stat-card">
             <span class="stat-label">Lectura completada</span>
-            <strong class="stat-number" id="readRate">75%</strong>
+            <strong class="stat-number" id="readRate">0%</strong>
             <small class="stat-note">Del total de notificaciones</small>
           </article>
         </section>
 
         <section class="notification-toolbar" aria-label="Buscar y filtrar notificaciones">
           <div class="tabs" role="tablist" aria-label="Filtrar notificaciones por lectura">
-            <button class="tab-button active" id="tab-all" type="button" role="tab" aria-selected="true" data-view="all">
-              Todas <span class="tab-count" id="count-all">12</span>
-            </button>
-            <button class="tab-button" id="tab-unread" type="button" role="tab" aria-selected="false" data-view="unread">
-              No leídas <span class="tab-count" id="count-unread">3</span>
-            </button>
-            <button class="tab-button" id="tab-read" type="button" role="tab" aria-selected="false" data-view="read">
-              Leídas <span class="tab-count" id="count-read">9</span>
-            </button>
+            <button class="tab-button active" id="tab-all" type="button" role="tab" aria-selected="true" data-view="all">Todas <span class="tab-count" id="count-all">0</span></button>
+            <button class="tab-button" id="tab-unread" type="button" role="tab" aria-selected="false" data-view="unread">No leídas <span class="tab-count" id="count-unread">0</span></button>
+            <button class="tab-button" id="tab-read" type="button" role="tab" aria-selected="false" data-view="read">Leídas <span class="tab-count" id="count-read">0</span></button>
           </div>
           <label class="search-box" for="notificationSearch">
             <span aria-hidden="true">⌕</span>
             <input id="notificationSearch" type="search" placeholder="Buscar notificaciones..." autocomplete="off">
           </label>
           <label class="toolbar-select" for="statusFilter">
-            <span class="sr-only">Estado</span>
+            <span class="sr-only">Filtrar por estado</span>
             <select id="statusFilter">
               <option value="all">Estado: Todos</option>
               <option value="unread">Estado: No leídas</option>
@@ -206,15 +117,9 @@
           <div class="table-scroll">
             <table class="notifications-table">
               <thead>
-                <tr>
-                  <th scope="col">Notificación</th>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Estado</th>
-                </tr>
+                <tr><th scope="col">Notificación</th><th scope="col">Fecha</th><th scope="col">Estado</th></tr>
               </thead>
-              <tbody id="notificationRows">
-                <!-- Las filas se generan desde el arreglo de notificaciones en el script. -->
-              </tbody>
+              <tbody id="notificationRows"></tbody>
             </table>
           </div>
           <div class="empty-state" id="emptyState" hidden>
@@ -223,212 +128,292 @@
             <p>Prueba con otra vista o cambia los filtros.</p>
           </div>
           <footer class="table-footer">
-            <span class="results-count" id="resultsCount">Mostrando 1 a 7 de 12 notificaciones</span>
+            <span class="results-count" id="resultsCount" aria-live="polite">Mostrando 0 notificaciones</span>
             <nav class="pagination" aria-label="Paginación de notificaciones" id="pagination"></nav>
           </footer>
         </section>
+        <p class="privacy-note"><span aria-hidden="true">🔔</span> El estado de lectura se guarda en este navegador.</p>
       </main>
     </div>
   </div>
 
+  <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú" tabindex="-1"></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
   <script>
-    // Datos de ejemplo. Puedes reemplazarlos por los datos reales de tu aplicación.
-    const notifications = [
-      { id: 1, title: 'Tu reporte está en revisión', dateLabel: 'Hace 20 min', date: '2026-10-09', read: false, action: 'Ver reporte', icon: '🔔' },
-      { id: 2, title: 'Actualización de reporte', dateLabel: 'Hace 2 horas', date: '2026-10-09', read: false, action: 'Ver reporte', icon: '•' },
-      { id: 3, title: 'Reporte resuelto', dateLabel: 'Ayer, 11:30 am', date: '2026-10-08', read: false, action: 'Ver reporte', icon: '✓' },
-      { id: 4, title: 'Gracias por tu reporte', dateLabel: 'Ayer, 9:15 am', date: '2026-10-08', read: true, action: 'Ver reporte', icon: '' },
-      { id: 5, title: 'Nuevas estadísticas disponibles', dateLabel: '2 May, 6:00 am', date: '2026-05-02', read: true, action: 'Ver estadísticas', icon: '' },
-      { id: 6, title: 'Tu reporte fue asignado', dateLabel: '1 May, 4:10 pm', date: '2026-05-01', read: true, action: 'Ver reporte', icon: '' },
-      { id: 7, title: 'Reporte recibido', dateLabel: '30 Abr, 8:45 am', date: '2026-04-30', read: true, action: 'Ver reporte', icon: '✓' },
-      { id: 8, title: 'Actividad nueva en tu zona', dateLabel: '28 Abr, 2:20 pm', date: '2026-04-28', read: true, action: 'Ver mapa', icon: '' },
-      { id: 9, title: 'Recordatorio de seguimiento', dateLabel: '27 Abr, 10:00 am', date: '2026-04-27', read: true, action: 'Ver reporte', icon: '' },
-      { id: 10, title: 'Actualización de seguridad', dateLabel: '25 Abr, 8:30 am', date: '2026-04-25', read: true, action: 'Ver detalles', icon: '' },
-      { id: 11, title: 'Incidente cercano registrado', dateLabel: '23 Abr, 6:15 pm', date: '2026-04-23', read: true, action: 'Ver mapa', icon: '✓' },
-      { id: 12, title: 'Tu perfil fue actualizado', dateLabel: '21 Abr, 1:40 pm', date: '2026-04-21', read: true, action: 'Ver perfil', icon: '' }
-    ];
-
-    const PAGE_SIZE = 7;
-    let currentView = 'all';
-    let currentPage = 1;
-    let searchText = '';
-
-    const rowsContainer = document.getElementById('notificationRows');
-    const emptyState = document.getElementById('emptyState');
-    const resultsCount = document.getElementById('resultsCount');
-    const pagination = document.getElementById('pagination');
-    const statusFilter = document.getElementById('statusFilter');
-    const dateFrom = document.getElementById('dateFrom');
-    const dateTo = document.getElementById('dateTo');
-    const searchInput = document.getElementById('notificationSearch');
-
-    function filteredNotifications() {
-      const state = statusFilter.value;
-      return notifications.filter((item) => {
-        const matchesTab = currentView === 'all' || (currentView === 'unread' && !item.read) || (currentView === 'read' && item.read);
-        const matchesState = state === 'all' || (state === 'unread' && !item.read) || (state === 'read' && item.read);
-        const matchesFrom = !dateFrom.value || item.date >= dateFrom.value;
-        const matchesTo = !dateTo.value || item.date <= dateTo.value;
-        const matchesSearch = !searchText || `${item.title} ${item.action}`.toLocaleLowerCase('es').includes(searchText);
-        return matchesTab && matchesState && matchesFrom && matchesTo && matchesSearch;
-      });
-    }
-
-    function renderCounts() {
-      const unreadCount = notifications.filter((item) => !item.read).length;
-      document.getElementById('count-all').textContent = notifications.length;
-      document.getElementById('count-unread').textContent = unreadCount;
-      const readCount = notifications.length - unreadCount;
-      document.getElementById('count-read').textContent = readCount;
-      document.getElementById('totalNotifications').textContent = notifications.length;
-      document.getElementById('unreadNotifications').textContent = unreadCount;
-      document.getElementById('readNotifications').textContent = readCount;
-      document.getElementById('readRate').textContent = `${notifications.length ? Math.round((readCount / notifications.length) * 100) : 0}%`;
-      document.getElementById('markAllRead').disabled = unreadCount === 0;
-    }
-
-    function renderPagination(totalPages) {
-      pagination.innerHTML = '';
-      if (totalPages <= 1) return;
-      const buttons = [
-        { label: '«', page: 1, title: 'Primera página', disabled: currentPage === 1 },
-        { label: '‹', page: currentPage - 1, title: 'Página anterior', disabled: currentPage === 1 }
+    (() => {
+      const initialNotifications = [
+        { id: 1, title: 'Tu reporte está en revisión', dateLabel: 'Hace 20 min', date: '2026-10-09', read: false, action: 'Ver reporte', icon: '🔔' },
+        { id: 2, title: 'Actualización de reporte', dateLabel: 'Hace 2 horas', date: '2026-10-09', read: false, action: 'Ver reporte', icon: '•' },
+        { id: 3, title: 'Reporte resuelto', dateLabel: 'Ayer, 11:30 am', date: '2026-10-08', read: false, action: 'Ver reporte', icon: '✓' },
+        { id: 4, title: 'Gracias por tu reporte', dateLabel: 'Ayer, 9:15 am', date: '2026-10-08', read: true, action: 'Ver reporte', icon: '' },
+        { id: 5, title: 'Nuevas estadísticas disponibles', dateLabel: '2 May, 6:00 am', date: '2026-05-02', read: true, action: 'Ver estadísticas', icon: '' },
+        { id: 6, title: 'Tu reporte fue asignado', dateLabel: '1 May, 4:10 pm', date: '2026-05-01', read: true, action: 'Ver reporte', icon: '' },
+        { id: 7, title: 'Reporte recibido', dateLabel: '30 Abr, 8:45 am', date: '2026-04-30', read: true, action: 'Ver reporte', icon: '✓' },
+        { id: 8, title: 'Actividad nueva en tu zona', dateLabel: '28 Abr, 2:20 pm', date: '2026-04-28', read: true, action: 'Ver mapa', icon: '' },
+        { id: 9, title: 'Recordatorio de seguimiento', dateLabel: '27 Abr, 10:00 am', date: '2026-04-27', read: true, action: 'Ver reporte', icon: '' },
+        { id: 10, title: 'Actualización de seguridad', dateLabel: '25 Abr, 8:30 am', date: '2026-04-25', read: true, action: 'Ver detalles', icon: '' },
+        { id: 11, title: 'Incidente cercano registrado', dateLabel: '23 Abr, 6:15 pm', date: '2026-04-23', read: true, action: 'Ver mapa', icon: '✓' },
+        { id: 12, title: 'Tu perfil fue actualizado', dateLabel: '21 Abr, 1:40 pm', date: '2026-04-21', read: true, action: 'Ver perfil', icon: '' }
       ];
-      for (let page = 1; page <= totalPages; page++) {
-        buttons.push({ label: String(page), page, title: `Página ${page}`, active: page === currentPage });
+      const PAGE_SIZE = 7;
+      const STORAGE_KEY = 'zaffapp-notifications';
+      const $ = (selector) => document.querySelector(selector);
+      const rowsContainer = $('#notificationRows');
+      const emptyState = $('#emptyState');
+      const resultsCount = $('#resultsCount');
+      const pagination = $('#pagination');
+      const statusFilter = $('#statusFilter');
+      const dateFrom = $('#dateFrom');
+      const dateTo = $('#dateTo');
+      const searchInput = $('#notificationSearch');
+      const notifications = initialNotifications;
+      let currentView = 'all';
+      let currentPage = 1;
+      let toastTimer;
+
+      function showToast(message) {
+        const toast = $('#toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        window.clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2800);
       }
-      buttons.push(
-        { label: '›', page: currentPage + 1, title: 'Página siguiente', disabled: currentPage === totalPages },
-        { label: '»', page: totalPages, title: 'Última página', disabled: currentPage === totalPages }
-      );
-      buttons.forEach((item) => {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = `page-button${item.active ? ' active' : ''}`;
-        button.textContent = item.label;
-        button.title = item.title;
-        button.setAttribute('aria-label', item.title);
-        if (item.active) button.setAttribute('aria-current', 'page');
-        button.disabled = Boolean(item.disabled);
-        button.addEventListener('click', () => {
-          currentPage = item.page;
-          renderNotifications();
+
+      function loadReadState() {
+        try {
+          const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+          if (Array.isArray(saved.readIds)) {
+            notifications.forEach((item) => {
+              if (saved.readIds.includes(item.id)) item.read = true;
+              else if (saved.unreadIds?.includes(item.id)) item.read = false;
+            });
+          }
+        } catch (error) {
+          showToast('No se pudo cargar el estado de lectura guardado.');
+        }
+      }
+
+      function persistReadState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            readIds: notifications.filter((item) => item.read).map((item) => item.id),
+            unreadIds: notifications.filter((item) => !item.read).map((item) => item.id)
+          }));
+          $('#notificationStatus').textContent = 'Notificaciones actualizadas';
+          $('#notificationStatus').classList.remove('is-dirty');
+        } catch (error) {
+          $('#notificationStatus').textContent = 'No se pudieron guardar los cambios';
+          $('#notificationStatus').classList.add('is-dirty');
+          showToast('El navegador no permitió guardar los cambios de lectura.');
+        }
+      }
+
+      function getFilteredNotifications() {
+        const state = statusFilter.value;
+        const search = searchInput.value.trim().toLocaleLowerCase('es');
+        return notifications.filter((item) => {
+          const matchesView = currentView === 'all' ||
+            (currentView === 'unread' && !item.read) ||
+            (currentView === 'read' && item.read);
+          const matchesState = state === 'all' ||
+            (state === 'unread' && !item.read) ||
+            (state === 'read' && item.read);
+          const matchesFrom = !dateFrom.value || item.date >= dateFrom.value;
+          const matchesTo = !dateTo.value || item.date <= dateTo.value;
+          const matchesSearch = !search ||
+            `${item.title} ${item.action}`.toLocaleLowerCase('es').includes(search);
+          return matchesView && matchesState && matchesFrom && matchesTo && matchesSearch;
         });
-        pagination.appendChild(button);
-      });
-    }
+      }
 
-    function renderNotifications() {
-      const filtered = filteredNotifications();
-      const total = filtered.length;
-      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-      currentPage = Math.min(currentPage, totalPages);
-      const startIndex = (currentPage - 1) * PAGE_SIZE;
-      const pageItems = filtered.slice(startIndex, startIndex + PAGE_SIZE);
-      rowsContainer.innerHTML = '';
+      function renderCounts() {
+        const unread = notifications.filter((item) => !item.read).length;
+        const read = notifications.length - unread;
+        $('#count-all').textContent = notifications.length;
+        $('#count-unread').textContent = unread;
+        $('#count-read').textContent = read;
+        $('#totalNotifications').textContent = notifications.length;
+        $('#unreadNotifications').textContent = unread;
+        $('#readNotifications').textContent = read;
+        $('#readRate').textContent = `${notifications.length ? Math.round(read / notifications.length * 100) : 0}%`;
+        $('#markAllRead').disabled = unread === 0;
+      }
 
-      pageItems.forEach((item) => {
-        const row = document.createElement('tr');
-        row.className = item.read ? 'notification-row is-read' : 'notification-row is-unread';
-        row.innerHTML = `
-          <td class="notification-cell">
-            <span class="row-icon${item.icon ? '' : ' icon-hidden'}" aria-hidden="true">${item.icon || '•'}</span>
-            <div class="notification-copy">
-              <button class="notification-title" type="button" data-id="${item.id}">${escapeHTML(item.title)}</button>
-              <a class="notification-action" href="#${item.action.toLowerCase().replaceAll(' ', '-')}">${escapeHTML(item.action)}</a>
-            </div>
-          </td>
-          <td class="date-cell">${escapeHTML(item.dateLabel)}</td>
-          <td class="state-cell"><span class="status-dot${item.read ? ' read-dot' : ''}"></span><span>${item.read ? 'Leída' : 'No leída'}</span></td>
-        `;
-        rowsContainer.appendChild(row);
-      });
+      function renderPagination(totalPages) {
+        pagination.replaceChildren();
+        if (totalPages <= 1) return;
+        const items = [
+          { label: '‹', page: currentPage - 1, title: 'Página anterior', disabled: currentPage === 1 }
+        ];
+        for (let page = 1; page <= totalPages; page++) {
+          items.push({ label: String(page), page, title: `Página ${page}`, active: page === currentPage });
+        }
+        items.push({ label: '›', page: currentPage + 1, title: 'Página siguiente', disabled: currentPage === totalPages });
+        items.forEach((item) => {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = `page-button${item.active ? ' active' : ''}`;
+          button.textContent = item.label;
+          button.title = item.title;
+          button.setAttribute('aria-label', item.title);
+          if (item.active) button.setAttribute('aria-current', 'page');
+          button.disabled = Boolean(item.disabled);
+          button.addEventListener('click', () => {
+            currentPage = item.page;
+            renderNotifications();
+          });
+          pagination.appendChild(button);
+        });
+      }
 
-      const hasResults = total > 0;
-      emptyState.hidden = hasResults;
-      rowsContainer.closest('table').hidden = !hasResults;
-      const first = hasResults ? startIndex + 1 : 0;
-      const last = Math.min(startIndex + PAGE_SIZE, total);
-      resultsCount.textContent = `Mostrando ${first} a ${last} de ${total} notificaciones`;
-      renderPagination(totalPages);
-      renderCounts();
-    }
+      function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, (character) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        })[character]);
+      }
 
-    function escapeHTML(value) {
-      return String(value).replace(/[&<>"']/g, (character) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      })[character]);
-    }
+      function renderNotifications() {
+        const filtered = getFilteredNotifications();
+        const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+        currentPage = Math.min(currentPage, totalPages);
+        const startIndex = (currentPage - 1) * PAGE_SIZE;
+        const pageItems = filtered.slice(startIndex, startIndex + PAGE_SIZE);
+        rowsContainer.replaceChildren();
 
-    document.querySelectorAll('.tab-button').forEach((button) => {
-      button.addEventListener('click', () => {
-        currentView = button.dataset.view;
-        currentPage = 1;
+        pageItems.forEach((item) => {
+          const row = document.createElement('tr');
+          row.className = `notification-row ${item.read ? 'is-read' : 'is-unread'}`;
+          row.innerHTML = `
+            <td class="notification-cell">
+              <span class="row-icon${item.icon ? '' : ' icon-hidden'}" aria-hidden="true">${escapeHTML(item.icon || '•')}</span>
+              <div class="notification-copy">
+                <button class="notification-title" type="button" data-id="${item.id}" aria-label="${item.read ? 'Leída' : 'Marcar como leída'}: ${escapeHTML(item.title)}">${escapeHTML(item.title)}</button>
+                <button class="notification-action" type="button" data-action="${escapeHTML(item.action)}" data-id="${item.id}">${escapeHTML(item.action)}</button>
+              </div>
+            </td>
+            <td class="date-cell"><time datetime="${item.date}">${escapeHTML(item.dateLabel)}</time></td>
+            <td class="state-cell"><span class="status-dot${item.read ? ' read-dot' : ''}" aria-hidden="true"></span><span>${item.read ? 'Leída' : 'No leída'}</span></td>
+          `;
+          rowsContainer.appendChild(row);
+        });
+
+        const hasResults = filtered.length > 0;
+        emptyState.hidden = hasResults;
+        $('.notifications-table').hidden = !hasResults;
+        resultsCount.textContent = hasResults
+          ? `Mostrando ${startIndex + 1} a ${Math.min(startIndex + PAGE_SIZE, filtered.length)} de ${filtered.length} notificaciones`
+          : 'Mostrando 0 notificaciones';
+        renderPagination(totalPages);
+        renderCounts();
+      }
+
+      function selectView(view) {
+        currentView = view;
         document.querySelectorAll('.tab-button').forEach((tab) => {
-          const selected = tab === button;
+          const selected = tab.dataset.view === view;
           tab.classList.toggle('active', selected);
           tab.setAttribute('aria-selected', String(selected));
         });
-        // Al cambiar de pestaña, el selector de estado vuelve a Todos para no duplicar el filtro.
-        statusFilter.value = 'all';
+      }
+
+      function markRead(id) {
+        const item = notifications.find((notification) => notification.id === Number(id));
+        if (!item || item.read) return false;
+        item.read = true;
+        persistReadState();
         renderNotifications();
+        return true;
+      }
+
+      function toggleSidebar() {
+        if (window.matchMedia('(max-width: 640px)').matches) {
+          document.body.classList.toggle('mobile-menu-open');
+        } else {
+          document.body.classList.toggle('sidebar-collapsed');
+        }
+      }
+
+      loadReadState();
+      try {
+        const settings = JSON.parse(localStorage.getItem('zaffapp-settings') || '{}');
+        if (typeof settings.username === 'string' && settings.username.trim()) {
+          $('#sidebarUsername').textContent = settings.username.trim();
+          $('#topbarUsername').textContent = settings.username.trim();
+        }
+      } catch (error) {
+        showToast('No se pudo cargar el perfil guardado.');
+      }
+
+      $('#sidebarToggle').addEventListener('click', toggleSidebar);
+      $('#topbarMenuToggle').addEventListener('click', toggleSidebar);
+      $('#sidebarBackdrop').addEventListener('click', () => document.body.classList.remove('mobile-menu-open'));
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 640px)').matches) document.body.classList.remove('mobile-menu-open');
       });
-    });
+      document.querySelectorAll('[data-unavailable-view]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          showToast(`La vista de ${link.dataset.unavailableView} aún no está disponible.`);
+        });
+      });
 
-    document.getElementById('markAllRead').addEventListener('click', () => {
-      notifications.forEach((item) => { item.read = true; });
-      renderNotifications();
-    });
-
-    searchInput.addEventListener('input', () => {
-      searchText = searchInput.value.trim().toLocaleLowerCase('es');
-      currentPage = 1;
-      renderNotifications();
-    });
-
-    [statusFilter, dateFrom, dateTo].forEach((control) => {
-      control.addEventListener('change', () => {
+      document.querySelectorAll('.tab-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          selectView(button.dataset.view);
+          statusFilter.value = 'all';
+          currentPage = 1;
+          renderNotifications();
+        });
+      });
+      $('#markAllRead').addEventListener('click', () => {
+        notifications.forEach((item) => { item.read = true; });
+        persistReadState();
+        renderNotifications();
+        showToast('Todas las notificaciones están marcadas como leídas.');
+      });
+      searchInput.addEventListener('input', () => {
         currentPage = 1;
         renderNotifications();
       });
-    });
-
-    document.getElementById('clearFilters').addEventListener('click', () => {
-      statusFilter.value = 'all';
-      dateFrom.value = '';
-      dateTo.value = '';
-      searchText = '';
-      searchInput.value = ''; 
-      currentView = 'all';
-      currentPage = 1;
-      document.querySelectorAll('.tab-button').forEach((tab) => {
-        const selected = tab.dataset.view === 'all';
-        tab.classList.toggle('active', selected);
-        tab.setAttribute('aria-selected', String(selected));
-      });
-      renderNotifications();
-    });
-
-    rowsContainer.addEventListener('click', (event) => {
-      const titleButton = event.target.closest('.notification-title');
-      if (!titleButton) return;
-      const item = notifications.find((notification) => notification.id === Number(titleButton.dataset.id));
-      if (item) {
-        item.read = true;
+      statusFilter.addEventListener('change', () => {
+        selectView(statusFilter.value);
+        currentPage = 1;
         renderNotifications();
-      }
-    });
+      });
+      [dateFrom, dateTo].forEach((control) => control.addEventListener('change', () => {
+        currentPage = 1;
+        renderNotifications();
+      }));
+      $('#clearFilters').addEventListener('click', () => {
+        statusFilter.value = 'all';
+        dateFrom.value = '';
+        dateTo.value = '';
+        searchInput.value = '';
+        selectView('all');
+        currentPage = 1;
+        renderNotifications();
+      });
+      rowsContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('button[data-id]');
+        if (!button) return;
+        const changed = markRead(button.dataset.id);
+        if (button.classList.contains('notification-action')) {
+          const action = button.dataset.action;
+          if (action === 'Ver estadísticas') {
+            window.location.href = '../../front_estadisticas_reportes/estadisticas/estadisticas.html';
+          } else if (action === 'Ver perfil') {
+            window.location.href = '../Configuracion/Configuracion_ZaffApp/configuracion.html';
+          } else {
+            showToast(`${action}: esta vista aún no está disponible.`);
+          }
+        } else if (changed) {
+          showToast('Notificación marcada como leída.');
+        }
+      });
 
-    // Menú lateral adaptable a móviles.
-    const sidebar = document.getElementById('sidebar');
-    document.getElementById('sidebarToggle').addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-    });
-    document.getElementById('mobileMenu').addEventListener('click', () => {
-      sidebar.classList.toggle('mobile-open');
-    });
-
-    renderNotifications();
+      renderNotifications();
+    })();
   </script>
 </body>
 </html>

@@ -17,18 +17,18 @@
             </div>
 
             <nav class="navigation" aria-label="Navegación principal">
-                <a class="nav-link" href="#historial"><span class="nav-icon">📄</span><span class="nav-label">Historial</span></a>
-                <a class="nav-link" href="#estadisticas"><span class="nav-icon">📊</span><span class="nav-label">Estadísticas</span></a>
-                <a class="nav-link" href="#reportes"><span class="nav-icon">🚩</span><span class="nav-label">Reportes</span></a>
-                <a class="nav-link" href="#mapa"><span class="nav-icon">🗺️</span><span class="nav-label">Mapa</span></a>
+                <a class="nav-link" href="../../../Inicio de sesion,Registro e Historial Front Julian-20261007T182016Z-1-001/Inicio de sesion,Registro e Historial Front Julian/prueba_historial/historial.prueba.html"><span class="nav-icon">📄</span><span class="nav-label">Historial</span></a>
+                <a class="nav-link" href="../../../front_estadisticas_reportes/estadisticas/estadisticas.html"><span class="nav-icon">📊</span><span class="nav-label">Estadísticas</span></a>
+                <a class="nav-link" href="#reportes" data-unavailable-view="Reportes" aria-disabled="true"><span class="nav-icon">🚩</span><span class="nav-label">Reportes</span></a>
+                <a class="nav-link" href="#mapa" data-unavailable-view="Mapa" aria-disabled="true"><span class="nav-icon">🗺️</span><span class="nav-label">Mapa</span></a>
                 <div class="nav-divider"></div>
-                <a class="nav-link" href="#notificaciones"><span class="nav-icon">🔔</span><span class="nav-label">Notificaciones</span></a>
+                <a class="nav-link" href="../../Notificaciones/notificaciones.html"><span class="nav-icon">🔔</span><span class="nav-label">Notificaciones</span></a>
                 <a class="nav-link active" href="configuracion.html" aria-current="page"><span class="nav-icon">⚙️</span><span class="nav-label">Configuración</span></a>
             </nav>
 
             <div class="sidebar-user">
                 <div class="avatar avatar-large" aria-hidden="true"> </div>
-                <div class="user-details"><strong id="sidebarUsername">Nombre_de_usuario</strong><a href="#perfil">Ver perfil &gt;</a></div>
+                <div class="user-details"><strong id="sidebarUsername">Nombre_de_usuario</strong><a href="#profileTitle">Ver perfil &gt;</a></div>
             </div>
         </aside>
 
@@ -36,11 +36,11 @@
             <!-- Barra superior alineada con la página Reportes -->
             <header class="topbar">
                 <div class="topbar-left">
-                    <button class="topbar-icon back-button" type="button" aria-label="Volver" title="Volver" onclick="history.length > 1 ? history.back() : null">‹</button>
+                    <a class="topbar-icon back-button" href="../../../Inicio de sesion,Registro e Historial Front Julian-20261007T182016Z-1-001/Inicio de sesion,Registro e Historial Front Julian/prueba_historial/historial.prueba.html" aria-label="Volver al historial" title="Volver al historial">‹</a>
                     <button class="topbar-icon" id="topbarMenuToggle" type="button" aria-label="Mostrar u ocultar menú" title="Menú">☰</button>
                 </div>
                 <div class="topbar-right">
-                    <a class="top-action" href="#notificaciones" aria-label="Notificaciones" title="Notificaciones">🔔</a>
+                    <a class="top-action" href="../../Notificaciones/notificaciones.html" aria-label="Notificaciones" title="Notificaciones">🔔</a>
                     <a class="top-action" href="configuracion.html" aria-label="Configuración" title="Configuración">⚙️</a>
                     <div class="avatar avatar-small" aria-hidden="true"></div>
                     <span class="topbar-username" id="topbarUsername">Nombre de usuario</span>
@@ -53,7 +53,10 @@
                         <h1>Configuración</h1>
                         <p>Administra tus preferencias y la configuración de tu cuenta</p>
                     </div>
-                    <button class="primary-button" id="saveChanges" type="button">Guardar cambios</button>
+                    <div class="heading-actions">
+                        <span class="save-status" id="saveStatus" role="status" aria-live="polite">Todos los cambios están guardados</span>
+                        <button class="primary-button" id="saveChanges" type="button">Guardar cambios</button>
+                    </div>
                 </div>
 
                 <div class="settings-layout">
@@ -70,23 +73,25 @@
                         <div class="setting-row account-row" data-field="username">
                             <div class="row-icon" aria-hidden="true">♙</div>
                             <div class="row-label"><label for="username">Nombre de usuario</label></div>
-                            <div class="row-value"><span class="value-text" id="usernameText">Nombre_de_usuario</span><input id="username" class="edit-input" value="Nombre_de_usuario" maxlength="40" hidden></div>
+                            <div class="row-value"><span class="value-text" id="usernameText">Nombre_de_usuario</span><input id="username" class="edit-input" value="Nombre_de_usuario" maxlength="40" autocomplete="username" required hidden></div>
                             <button class="edit-button" type="button" data-edit="username" aria-label="Editar nombre de usuario" title="Editar">✎</button>
                         </div>
 
                         <div class="setting-row account-row" data-field="email">
                             <div class="row-icon" aria-hidden="true">✉</div>
                             <div class="row-label"><label for="email">Correo electrónico</label></div>
-                            <div class="row-value"><span class="value-text" id="emailText">usuario@gmail.com</span><input id="email" class="edit-input" type="email" value="usuario@gmail.com" maxlength="100" hidden></div>
+                            <div class="row-value"><span class="value-text" id="emailText">usuario@gmail.com</span><input id="email" class="edit-input" type="email" value="usuario@gmail.com" maxlength="100" autocomplete="email" required hidden></div>
                             <button class="edit-button" type="button" data-edit="email" aria-label="Editar correo electrónico" title="Editar">✎</button>
                         </div>
 
                         <div class="setting-row account-row" data-field="phone">
                             <div class="row-icon" aria-hidden="true">♧</div>
                             <div class="row-label"><label for="phone">Número de teléfono</label></div>
-                            <div class="row-value"><span class="value-text" id="phoneText">+57 0000000000</span><input id="phone" class="edit-input" type="tel" value="+57 0000000000" maxlength="22" hidden></div>
+                            <div class="row-value"><span class="value-text" id="phoneText">+57 0000000000</span><input id="phone" class="edit-input" type="tel" value="+57 0000000000" maxlength="22" autocomplete="tel" required hidden></div>
                             <button class="edit-button" type="button" data-edit="phone" aria-label="Editar número de teléfono" title="Editar">✎</button>
                         </div>
+
+                        <button class="sidebar-backdrop" id="sidebarBackdrop" type="button" aria-label="Cerrar menú" tabindex="-1"></button>
 
                         <div class="setting-row account-row password-row">
                             <div class="row-icon" aria-hidden="true">♙</div>
@@ -120,7 +125,7 @@
                         </div>
                     </section>
                 </div>
-                <p class="privacy-note"><span aria-hidden="true">🔒</span> Tus datos se usan para administrar tu cuenta y tus preferencias de Zaffapp.</p>
+                <p class="privacy-note"><span aria-hidden="true">🔒</span> Tu perfil y tus preferencias se guardan solo en este navegador.</p>
             </main>
         </div>
     </div>
@@ -150,6 +155,7 @@
 (() => {
     const $ = (selector) => document.querySelector(selector);
     const toast = $('#toast');
+    const saveStatus = $('#saveStatus');
     let toastTimer;
 
     function showToast(message) {
@@ -169,6 +175,18 @@
     }
     $('#sidebarToggle').addEventListener('click', toggleSidebar);
     $('#topbarMenuToggle').addEventListener('click', toggleSidebar);
+    document.querySelectorAll('[data-unavailable-view]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            showToast('La vista de ' + link.dataset.unavailableView + ' aún no está disponible.');
+        });
+    });
+    $('#sidebarBackdrop').addEventListener('click', () => document.body.classList.remove('mobile-menu-open'));
+    window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 640px)').matches) {
+            document.body.classList.remove('mobile-menu-open');
+        }
+    });
 
     // Carga preferencias guardadas localmente, si existen.
     const textFields = ['username', 'email', 'phone'];
@@ -184,9 +202,19 @@
             if (typeof saved[field] === 'boolean') $('#' + field).checked = saved[field];
         });
     } catch (error) {
-        // La página sigue funcionando aunque el almacenamiento del navegador esté bloqueado.
+        showToast('No se pudieron cargar las preferencias guardadas en este navegador.');
     }
     textFields.forEach((field) => updateFieldDisplay(field));
+
+    function markUnsaved() {
+        saveStatus.textContent = 'Tienes cambios sin guardar';
+        saveStatus.classList.add('is-dirty');
+    }
+
+    function markSaved() {
+        saveStatus.textContent = 'Todos los cambios están guardados';
+        saveStatus.classList.remove('is-dirty');
+    }
 
     function updateFieldDisplay(field) {
         const value = $('#' + field).value.trim();
@@ -209,6 +237,8 @@
                 $('#' + field + 'Text').hidden = false;
                 button.textContent = '✎';
                 button.setAttribute('aria-label', 'Editar ' + field);
+                button.title = 'Editar';
+                markUnsaved();
                 return;
             }
             input.hidden = false;
@@ -216,25 +246,33 @@
             input.focus();
             input.select?.();
             button.textContent = '✓';
-            button.setAttribute('aria-label', 'Terminar edición');
+            button.setAttribute('aria-label', 'Terminar edición de ' + field);
             button.title = 'Terminar edición';
         });
+    });
+    textFields.forEach((field) => {
+        $('#' + field).addEventListener('input', () => {
+            updateFieldDisplay(field);
+            markUnsaved();
+        });
+    });
+    preferenceFields.forEach((field) => {
+        $('#' + field).addEventListener('change', markUnsaved);
     });
 
     // Guardar perfil y privacidad en localStorage para que se conserven en este navegador.
     $('#saveChanges').addEventListener('click', () => {
         for (const field of textFields) {
             const input = $('#' + field);
-            if (field === 'email' && input.value.trim() && !input.checkValidity()) {
+            if (!input.checkValidity()) {
                 input.hidden = false;
                 $('#' + field + 'Text').hidden = true;
+                document.querySelector('[data-edit="' + field + '"]').textContent = '✓';
                 input.focus();
-                showToast('Revisa el formato del correo electrónico.');
-                return;
-            }
-            if (!input.value.trim()) {
-                input.focus();
-                showToast('Completa todos los datos del perfil antes de guardar.');
+                const editButton = document.querySelector('[data-edit="' + field + '"]');
+                editButton.setAttribute('aria-label', 'Terminar edición de ' + field);
+                editButton.title = 'Terminar edición';
+                showToast(field === 'email' ? 'Introduce un correo electrónico válido.' : 'Completa los datos obligatorios del perfil.');
                 return;
             }
         }
@@ -252,23 +290,30 @@
         preferenceFields.forEach((field) => { data[field] = $('#' + field).checked; });
         try {
             localStorage.setItem('zaffapp-settings', JSON.stringify(data));
+            markSaved();
             showToast('Cambios guardados correctamente.');
         } catch (error) {
+            markUnsaved();
             showToast('Los cambios están aplicados, pero el navegador no permitió guardarlos permanentemente.');
         }
     });
 
     // Modal de cambio de contraseña.
     const modal = $('#passwordModal');
+    let passwordTrigger;
     function openPasswordModal() {
+        passwordTrigger = document.activeElement;
         modal.hidden = false;
+        document.body.classList.add('modal-open');
         $('#currentPassword').focus();
         $('#passwordError').textContent = '';
     }
     function closePasswordModal() {
         modal.hidden = true;
+        document.body.classList.remove('modal-open');
         $('#passwordForm').reset();
         $('#passwordError').textContent = '';
+        passwordTrigger?.focus();
     }
     $('#openPassword').addEventListener('click', openPasswordModal);
     $('#closePassword').addEventListener('click', closePasswordModal);
@@ -277,6 +322,18 @@
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && !modal.hidden) closePasswordModal();
         if (event.key === 'Escape') document.body.classList.remove('mobile-menu-open');
+        if (event.key === 'Tab' && !modal.hidden) {
+            const focusable = modal.querySelectorAll('button:not([disabled]), input:not([disabled])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
     });
     $('#passwordForm').addEventListener('submit', (event) => {
         event.preventDefault();
